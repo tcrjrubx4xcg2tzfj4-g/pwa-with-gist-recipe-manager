@@ -21,7 +21,6 @@ PWA-with-gist/
 ├── index.html          # Main HTML entry point
 ├── manifest.json       # PWA manifest (name, icons, display)
 ├── service-worker.js   # Handles caching & offline support
-├── example-recipes.json # Seed data for first-time setup
 ├── css/
 │   └── style.css      # App styles
 ├── js/
@@ -86,15 +85,6 @@ This app uses a GitHub Gist as a backend for syncing recipes across devices:
 2. It then syncs with the GitHub Gist in the background
 3. When you open the app or click **Sync Now**, it pulls the latest from the gist
 4. If there's a conflict (same recipe modified on multiple devices), the most recently updated version wins
-
-## Example Recipes
-
-The app comes with 2 example recipes to get you started:
-
-1. **Classic Chocolate Chip Cookies** (Dessert)
-2. **Avocado Toast with Poached Eggs** (Breakfast)
-
-These are automatically added to the gist when you first configure the app.
 
 ## Notes
 
