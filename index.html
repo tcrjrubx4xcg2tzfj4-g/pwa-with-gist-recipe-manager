@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A recipe manager PWA with offline support">
+    <title>Recipe Manager</title>
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e74c3c">
+    <link rel="icon" href="icon-192x192.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Recipe Manager</h1>
+            <p class="subtitle">Your personal recipe collection</p>
+        </header>
+
+        <main>
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="status" id="status">Checking connection...</div>
+                <button id="theme-toggle" class="icon-btn" title="Toggle dark mode">🌙</button>
+            </div>
+
+            <!-- Token Configuration (shown when not configured) -->
+            <div class="card form-card" id="token-card" hidden>
+                <h2>🔑 GitHub Authentication</h2>
+                <p class="hint">Enter your GitHub Personal Access Token to sync recipes with the gist backend.</p>
+                <div class="form-group">
+                    <label for="github-token">GitHub Token</label>
+                    <input type="password" id="github-token" placeholder="Enter your GitHub token">
+                    <small class="hint">Create a token at: GitHub Settings → Developer settings → Personal access tokens (with 'gist' scope)</small>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-primary" id="save-token-btn">💾 Save Token</button>
+                </div>
+                <div class="error-message" id="token-error" hidden></div>
+            </div>
+
+            <!-- Add/Edit Recipe Form -->
+            <div class="card form-card" id="form-card">
+                <h2 id="form-title">📝 Add New Recipe</h2>
+                <form id="recipe-form">
+                    <input type="hidden" id="recipe-id">
+
+                    <div class="form-group">
+                        <label for="recipe-name">Recipe Name *</label>
+                        <input type="text" id="recipe-name" required placeholder="e.g., Classic Pancakes">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recipe-category">Category</label>
+                            <select id="recipe-category">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="snack">Snack</option>
+                                <option value="drink">Drink</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipe-servings">Servings</label>
+                            <input type="number" id="recipe-servings" min="1" max="100" placeholder="4">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recipe-prep-time">Prep Time (min)</label>
+                            <input type="number" id="recipe-prep-time" min="0" placeholder="15">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipe-cook-time">Cook Time (min)</label>
+                            <input type="number" id="recipe-cook-time" min="0" placeholder="30">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-ingredients">Ingredients *</label>
+                        <textarea id="recipe-ingredients" rows="4" required placeholder="Enter each ingredient on a new line&#10;e.g.,&#10;2 cups flour&#10;1 cup sugar&#10;3 eggs"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-instructions">Instructions *</label>
+                        <textarea id="recipe-instructions" rows="6" required placeholder="Enter each step on a new line&#10;e.g.,&#10;Preheat oven to 350°F&#10;Mix dry ingredients&#10;Add wet ingredients"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-notes">Notes (optional)</label>
+                        <textarea id="recipe-notes" rows="2" placeholder="Any additional tips or notes"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="save-btn">💾 Save Recipe</button>
+                        <button type="button" class="btn btn-secondary" id="cancel-btn" hidden>Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sync Status -->
+            <div class="sync-status" id="sync-status" hidden>
+                <span id="sync-text">Syncing...</span>
+                <button class="btn btn-small" id="sync-now-btn" title="Sync now">🔄 Sync Now</button>
+            </div>
+
+            <!-- Recipe List -->
+            <div class="card">
+                <div class="section-header">
+                    <h2>📖 Your Recipes</h2>
+                    <div class="recipe-count" id="recipe-count">0 recipes</div>
+                </div>
+
+                <!-- Search/Filter -->
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="🔍 Search recipes...">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="snack">Snack</option>
+                        <option value="drink">Drink</option>
+                    </select>
+                </div>
+
+                <!-- Recipe List Container -->
+                <div id="recipe-list" class="recipe-list">
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon">📝</div>
+                        <p>No recipes yet!</p>
+                        <p class="empty-hint">Start by adding your first recipe above.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="install-btn" class="install-btn" hidden>
+                📲 Install App
+            </button>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ as a PWA | Recipe Manager</p>
+        </footer>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal-overlay" id="modal-overlay" hidden>
+        <div class="modal">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- App Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

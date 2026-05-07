@@ -1,0 +1,77 @@
+{
+  "recipes": [
+    {
+      "id": "recipe-1705214400000-001",
+      "name": "Classic Chocolate Chip Cookies",
+      "category": "dessert",
+      "servings": 24,
+      "prepTime": 15,
+      "cookTime": 12,
+      "ingredients": [
+        "2 1/4 cups all-purpose flour",
+        "1 teaspoon baking soda",
+        "1 teaspoon salt",
+        "1 cup unsalted butter, softened",
+        "3/4 cup granulated sugar",
+        "3/4 cup packed brown sugar",
+        "1 teaspoon vanilla extract",
+        "2 large eggs",
+        "2 cups semisweet chocolate chips"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "In a small bowl, combine flour, baking soda, and salt.",
+        "In a large bowl, beat butter, granulated sugar, brown sugar, and vanilla until creamy.",
+        "Add eggs, one at a time, beating well after each addition.",
+        "Gradually beat in flour mixture.",
+        "Stir in chocolate chips.",
+        "Drop rounded tablespoons of dough onto ungreased baking sheets.",
+        "Bake for 9 to 11 minutes or until golden brown.",
+        "Cool on baking sheets for 2 minutes; remove to wire racks to cool completely."
+      ],
+      "notes": [
+        "For chewier cookies, chill dough for 30 minutes before baking.",
+        "Store in an airtight container for up to 5 days."
+      ],
+      "createdAt": "2024-01-15T12:00:00.000Z",
+      "updatedAt": "2024-01-15T12:00:00.000Z"
+    },
+    {
+      "id": "recipe-1705214400000-002",
+      "name": "Avocado Toast with Poached Eggs",
+      "category": "breakfast",
+      "servings": 2,
+      "prepTime": 10,
+      "cookTime": 10,
+      "ingredients": [
+        "2 large eggs",
+        "2 slices whole grain bread",
+        "1 ripe avocado",
+        "1 teaspoon lemon juice",
+        "Salt and pepper to taste",
+        "Red pepper flakes (optional)",
+        "2 teaspoons vinegar (for poaching)",
+        "Fresh cilantro or parsley for garnish"
+      ],
+      "instructions": [
+        "Fill a large saucepan with water, add vinegar, and bring to a simmer.",
+        "Crack eggs into separate small cups.",
+        "Create a whirlpool in the simmering water and gently slide eggs in.",
+        "Poach for 3-4 minutes until whites are set but yolks are still runny.",
+        "Remove eggs with a slotted spoon and drain on paper towels.",
+        "Toast bread until golden and crisp.",
+        "Mash avocado with lemon juice, salt, and pepper.",
+        "Spread avocado mixture on toast.",
+        "Top with poached eggs, red pepper flakes, and fresh herbs.",
+        "Season with additional salt and pepper if needed."
+      ],
+      "notes": [
+        "Use the freshest eggs possible for best poaching results.",
+        "Add sliced radishes or microgreens for extra crunch and flavor."
+      ],
+      "createdAt": "2024-01-15T12:00:00.000Z",
+      "updatedAt": "2024-01-15T12:00:00.000Z"
+    }
+  ],
+  "lastUpdated": "2024-01-15T12:00:00.000Z"
+}
