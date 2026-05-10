@@ -28,8 +28,8 @@ const recipeIdInput = document.getElementById('recipe-id');
 const nameInput = document.getElementById('recipe-name');
 const categoryInput = document.getElementById('recipe-category');
 const servingsInput = document.getElementById('recipe-servings');
-const prepTimeInput = document.getElementById('recipe-prep-time');
-const cookTimeInput = document.getElementById('recipe-cook-time');
+const sourceInput = document.getElementById('recipe-source');
+const caloriesInput = document.getElementById('recipe-calories');
 const ingredientsInput = document.getElementById('recipe-ingredients');
 const instructionsInput = document.getElementById('recipe-instructions');
 const notesInput = document.getElementById('recipe-notes');
@@ -270,8 +270,8 @@ function addRecipe(recipeData) {
         name: recipeData.name,
         category: recipeData.category,
         servings: recipeData.servings,
-        prepTime: recipeData.prepTime,
-        cookTime: recipeData.cookTime,
+        source: recipeData.source,
+        calories: recipeData.calories,
         ingredients: recipeData.ingredients,
         instructions: recipeData.instructions,
         notes: recipeData.notes,
@@ -296,8 +296,8 @@ function updateRecipe(id, recipeData) {
             name: recipeData.name,
             category: recipeData.category,
             servings: recipeData.servings,
-            prepTime: recipeData.prepTime,
-            cookTime: recipeData.cookTime,
+            source: recipeData.source,
+            calories: recipeData.calories,
             ingredients: recipeData.ingredients,
             instructions: recipeData.instructions,
             notes: recipeData.notes,
@@ -348,8 +348,8 @@ function populateForm(recipe) {
     nameInput.value = recipe.name;
     categoryInput.value = recipe.category;
     servingsInput.value = recipe.servings || '';
-    prepTimeInput.value = recipe.prepTime || '';
-    cookTimeInput.value = recipe.cookTime || '';
+    sourceInput.value = recipe.source || '';
+    caloriesInput.value = recipe.calories || '';
     ingredientsInput.value = recipe.ingredients.join('\n');
     instructionsInput.value = recipe.instructions.join('\n');
     notesInput.value = recipe.notes ? recipe.notes.join('\n') : '';
@@ -365,8 +365,8 @@ function handleFormSubmit(e) {
         name: nameInput.value.trim(),
         category: categoryInput.value,
         servings: servingsInput.value ? parseInt(servingsInput.value) : null,
-        prepTime: prepTimeInput.value ? parseInt(prepTimeInput.value) : null,
-        cookTime: cookTimeInput.value ? parseInt(cookTimeInput.value) : null,
+        source: sourceInput.value.trim() || null,
+        calories: caloriesInput.value ? parseInt(caloriesInput.value) : null,
         ingredients: ingredientsInput.value.split('\n').filter(line => line.trim()),
         instructions: instructionsInput.value.split('\n').filter(line => line.trim()),
         notes: notesInput.value ? notesInput.value.split('\n').filter(line => line.trim()) : []
@@ -397,14 +397,6 @@ function getFilteredRecipes() {
     });
 }
 
-function formatTime(minutes) {
-    if (!minutes) return null;
-    if (minutes < 60) return `${minutes} min`;
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
-}
-
 function getCategoryEmoji(category) {
     const emojis = {
         breakfast: '🥞',
@@ -418,9 +410,6 @@ function getCategoryEmoji(category) {
 }
 
 function createRecipeCard(recipe) {
-    const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
-    const timeDisplay = totalTime > 0 ? formatTime(totalTime) : null;
-
     const card = document.createElement('div');
     card.className = 'recipe-card';
     card.dataset.id = recipe.id;
@@ -435,7 +424,8 @@ function createRecipeCard(recipe) {
         </div>
         <div class="recipe-card-meta">
             ${recipe.servings ? `<span>👥 ${recipe.servings} servings</span>` : ''}
-            ${timeDisplay ? `<span>⏱️ ${timeDisplay}</span>` : ''}
+            ${recipe.calories ? `<span>🔥 ${recipe.calories} cal</span>` : ''}
+            ${recipe.source ? `<span>📖 ${escapeHtml(recipe.source)}</span>` : ''}
             <span>📅 ${new Date(recipe.createdAt).toLocaleDateString()}</span>
         </div>
         <div class="recipe-card-ingredients">
@@ -501,8 +491,6 @@ function showRecipeModal(id) {
     const recipe = getRecipeById(id);
     if (!recipe) return;
 
-    const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
-
     modalContent.innerHTML = `
         <div class="modal-header">
             <h2>${escapeHtml(recipe.name)}</h2>
@@ -510,9 +498,8 @@ function showRecipeModal(id) {
         </div>
         <div class="modal-meta">
             ${recipe.servings ? `<span>👥 ${recipe.servings} servings</span>` : ''}
-            ${recipe.prepTime ? `<span>⏱️ Prep: ${formatTime(recipe.prepTime)}</span>` : ''}
-            ${recipe.cookTime ? `<span>🍳 Cook: ${formatTime(recipe.cookTime)}</span>` : ''}
-            ${totalTime ? `<span>⏱️ Total: ${formatTime(totalTime)}</span>` : ''}
+            ${recipe.calories ? `<span>🔥 ${recipe.calories} calories</span>` : ''}
+            ${recipe.source ? `<span>📖 Source: ${escapeHtml(recipe.source)}</span>` : ''}
         </div>
         <div class="modal-section">
             <h3>📋 Ingredients</h3>

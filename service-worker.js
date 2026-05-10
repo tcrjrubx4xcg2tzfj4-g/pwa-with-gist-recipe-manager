@@ -9,7 +9,12 @@ const ASSETS_TO_CACHE = [
     '/icon-512x512.png'
 ];
 
-// Install event - cache assets
+// Listen for skipWaiting message from app
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.action === 'skipWaiting') {
+        self.skipWaiting();
+    }
+});
 self.addEventListener('install', (event) => {
     console.log('[Service Worker] Installing...');
     event.waitUntil(
