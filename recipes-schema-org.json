@@ -1,0 +1,2031 @@
+[
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Feine Möhren-Kartoffel-Suppe",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Zwiebeln: 50 g",
+            "Kartoffeln: 500 g",
+            "Moehren: 350 g",
+            "Butter: 20 g",
+            "CremeFraiche: 150 g",
+            "Gemuesebruehe: 1000 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "soup",
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1212 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Himmel & Erde",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Kartoffeln: 600 g",
+            "Milch: 50 g",
+            "Butter: 25 g",
+            "Apfel: 600 g",
+            "Krakauer: 400 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2410 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Blaubeer Sommersalat",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Zucker: 20 g",
+            "Walknusskerne: 50 g",
+            "Salatblaetter: 200 g",
+            "Rucola: 50 g",
+            "Zwiebeln: 25 g",
+            "Heidelbeeren: 175 g",
+            "Feta: 120 g",
+            "Himbeeressig: 30 g",
+            "Honig: 10 g",
+            "Senf: 5 g",
+            "Walnussoel: 30 g",
+            "Salz: 2 g",
+            "Pfeffer: 2 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1174 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Grüne-Göttin-Salat",
+        "source": "Plantiful Cooking, 25",
+        "recipeIngredient": [
+            "Gurke: 500 g",
+            "Spitzkohl: 500 g",
+            "Petersilie: 10 g",
+            "Basilikum: 10 g",
+            "Dill: 10 g",
+            "Olivenoel: 30 g",
+            "Agavensirup: 10 g",
+            "Zitronenaft: 30 g",
+            "Salz: 3 g",
+            "Chiliflocken: 1 g",
+            "Cashewkerne: 25 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "662 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Grüne-Göttin-Salat mit Couscous",
+        "source": "Plantiful Cooking, 25",
+        "recipeIngredient": [
+            "Gurke: 500 g",
+            "Spitzkohl: 500 g",
+            "Petersilie: 10 g",
+            "Basilikum: 10 g",
+            "Dill: 10 g",
+            "Olivenoel: 30 g",
+            "Agavensirup: 10 g",
+            "Zitronenaft: 30 g",
+            "Salz: 3 g",
+            "Chiliflocken: 1 g",
+            "Cashewkerne: 25 g",
+            "Wasser: 450 g",
+            "Zitronenaft: 25 g",
+            "Salz: 1 g",
+            "Minze: 5 g",
+            "Couscous: 300 g",
+            "Tofu: 375 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2257 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Grüne-Göttin-Salat mit Tofu",
+        "source": "Plantiful Cooking, 25",
+        "recipeIngredient": [
+            "Gurke: 500 g",
+            "Spitzkohl: 500 g",
+            "Petersilie: 10 g",
+            "Basilikum: 10 g",
+            "Dill: 10 g",
+            "Olivenoel: 30 g",
+            "Agavensirup: 10 g",
+            "Zitronenaft: 30 g",
+            "Salz: 3 g",
+            "Chiliflocken: 1 g",
+            "Cashewkerne: 25 g",
+            "Tofu: 200 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "950 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Maple-Baked Salmon",
+        "source": "You Suck At Cooking, 175",
+        "recipeIngredient": [
+            "Olivenoel: 20 g",
+            "Ahornsirup: 20 g",
+            "Sojasosse: 7 g",
+            "Ingwer: 10 g",
+            "Lachs: 250 g",
+            "Reis: 120 g",
+            "Wasser: 240 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1168 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Blumenkohl \"Hack\"-Pide",
+        "source": "Plantiful Cooking, 106",
+        "recipeIngredient": [
+            "Mehl: 350 g",
+            "Trockenhefe: 4 g",
+            "Salz: 3 g",
+            "Olivenoel: 10 g",
+            "Blumenkohl: 300 g",
+            "Walknusskerne: 120 g",
+            "Champignons: 300 g",
+            "Olivenoel: 5 g",
+            "Salz: 2 g",
+            "Pfeffer: 0 g",
+            "Tomatenmark: 30 g",
+            "Paprikapulver: 2 g",
+            "Kreuzkuemmel: 2 g",
+            "Basilikum: 2 g",
+            "Zitronenaft: 25 g",
+            "Dattelsirup: 10 g",
+            "Petersilie: 10 g",
+            "Ahornsirup: 5 g",
+            "Sahne: 20 g",
+            "Tomate: 700 g",
+            "Petersilie: 40 g",
+            "Minze: 25 g",
+            "Paprika: 200 g",
+            "Olivenoel: 40 g",
+            "Harrisapaste: 5 g",
+            "Dattelsirup: 15 g",
+            "Zitronenaft: 40 g",
+            "Salz: 3 g"
+        ],
+        "recipeYield": "5 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3146 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Torteletts Karotten + Walnüsse",
+        "source": "Veg Box, 145",
+        "recipeIngredient": [
+            "Blaetterteig: 230 g",
+            "Moehren: 350 g",
+            "Zwiebeln: 60 g",
+            "Fruehlingszwiebel: 150 g",
+            "Ahornsirup: 29 g",
+            "Balsamicoessig: 27 g",
+            "VeganerFrischkaese: 200 g",
+            "Walknusskerne: 50 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2199 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Türkische Teigtaschen",
+        "source": "Ordner",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Pita + Minze",
+        "source": "Gruppe",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Hummus",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Kichererbsen: 265 g",
+            "Zitronenaft: 50 g",
+            "Tahini: 60 g",
+            "Honig: 5 g",
+            "Kreuzkuemmel: 1 g",
+            "Paprikapulver: 1 g",
+            "Wasser: 50 g",
+            "Salz: 1 g",
+            "Pfeffer: 0 g",
+            "Olivenoel: 5 g",
+            "Schwarzkuemmel: 3 g",
+            "Petersilie: 5 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "794 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Crispy Rice",
+        "source": "PC, 38",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Wraps",
+        "source": null,
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Breakfast Sandwichest Med.",
+        "source": "You Suck, 102",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Brokkoli-Schinken Quiche",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Mehl: 250 g",
+            "Salz: 1 g",
+            "Ei: 55 g",
+            "Butter: 125 g",
+            "Ei: 165 g",
+            "Parmesan: 50 g",
+            "Sahne: 200 g",
+            "Brokkoli: 600 g",
+            "Paprika: 200 g",
+            "Kochschinken: 100 g",
+            "Pfeffer: 0 g",
+            "Muskatnuss: 1 g",
+            "Salz: 3 g"
+        ],
+        "recipeYield": "5 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3293 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Ziegenkäse-Quiche",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Mehl: 250 g",
+            "Salz: 1 g",
+            "Paprikapulver: 1 g",
+            "Pfeffer: 0 g",
+            "Butter: 125 g",
+            "Wasser: 30 g",
+            "Butter: 2 g",
+            "Mehl: 10 g",
+            "Schmand: 200 g",
+            "Parmesan: 200 g",
+            "Ei: 220 g",
+            "Staerke: 20 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Paprikapulver: 1 g",
+            "Muskatnuss: 1 g",
+            "Tomate: 100 g",
+            "Ziegenfrischkaese: 150 g"
+        ],
+        "recipeYield": "6 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3845 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Lauch-Hack-Suppe",
+        "source": "Ordner",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "soup",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Pizzasuppe",
+        "source": "Ordner",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "soup",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Marokkanische Karotten-Tajine",
+        "source": "Veg Box, 152",
+        "recipeIngredient": [
+            "Moehren: 500 g",
+            "GeschaelteTomate: 800 g",
+            "Zimt: 2 g",
+            "Paprikapulver: 4 g",
+            "Kreuzkuemmel: 8 g",
+            "Salz: 6 g",
+            "Kichererbsen: 400 g",
+            "Rosinen: 30 g",
+            "Mandel: 50 g",
+            "Reis: 240 g",
+            "Wasser: 480 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2176 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Spicy Peanut Butter Soup",
+        "source": "You Suck, 133",
+        "recipeIngredient": [
+            "Zwiebeln: 75 g",
+            "Olivenoel: 20 g",
+            "Gemuesebruehe: 1000 g",
+            "Brokkoli: 800 g",
+            "Moehren: 200 g",
+            "GeschaelteTomate: 400 g",
+            "Kichererbsen: 265 g",
+            "Erdnussmus: 150 g",
+            "BraunerZucker: 8 g",
+            "Salz: 8 g",
+            "Chiliflocken: 0 g",
+            "Pfeffer: 0 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "soup",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2018 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Gefüllte Paprika",
+        "source": null,
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Kumpir",
+        "source": "selfmade",
+        "recipeIngredient": [
+            "Suesskartoffel: 700 g",
+            "Quark: 250 g",
+            "Hummus: 200 g",
+            "Salatblaetter: 100 g",
+            "Moehren: 100 g",
+            "Paprika: 100 g",
+            "Olivenoel: 20 g",
+            "Balsamicoessig: 10 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1547 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Ofengemüse",
+        "source": null,
+        "recipeIngredient": [
+            "Kartoffeln: 400 g",
+            "Suesskartoffel: 400 g",
+            "Aubergine: 200 g",
+            "Zucchini: 200 g",
+            "RoteBeete: 200 g",
+            "Moehren: 200 g",
+            "Paprika: 200 g",
+            "Feta: 200 g",
+            "Bohnenkraut: 2 g",
+            "Rosmarin: 2 g",
+            "Oregano: 2 g",
+            "Rapsoel: 50 g",
+            "Hummus: 175 g",
+            "Quark: 250 g",
+            "ItalienischeKrauter: 10 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2479 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Sesame-Roasted Broccoli",
+        "source": "You Suck, 146",
+        "recipeIngredient": [
+            "Brokkoli: 500 g",
+            "Olivenoel: 10 g",
+            "Sesamoel: 15 g",
+            "Sesam: 8 g",
+            "Salz: 3 g",
+            "Pfeffer: 0 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "431 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Spitzkohl aus dem Ofen",
+        "source": "Gruppe",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Sweet Potato Wedges",
+        "source": "You Suck, 82",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Auberginen Bolognese",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Aubergine: 750 g",
+            "Salz: 10 g",
+            "Zwiebeln: 75 g",
+            "Olivenoel: 30 g",
+            "Moehren: 250 g",
+            "Tomatenmark: 30 g",
+            "Rotwein: 100 g",
+            "Tomatenpueree: 800 g",
+            "Sojasosse: 30 g",
+            "Chiliflocken: 2 g",
+            "Ahornsirup: 2 g",
+            "Spaghetti: 400 g",
+            "Parmesan: 100 g"
+        ],
+        "recipeYield": "5 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "noodles",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2706 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Davids Spagetthi Carbonara",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Speckwuerfel: 50 g",
+            "Spaghetti: 175 g",
+            "Eigelb: 66 g",
+            "Sahne: 100 g",
+            "Parmesan: 50 g",
+            "Sahne: 1 g",
+            "Pfeffer: 0 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "noodles",
+            "sweet"
+        ],
+        "nutrition": {
+            "calories": "1495 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Eblipfanne",
+        "source": null,
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Veggie Rice Bowl",
+        "source": "You Suck, 164",
+        "recipeIngredient": [
+            "Reis: 110 g",
+            "Wasser: 220 g",
+            "Butter: 7 g",
+            "Ingwer: 10 g",
+            "Olivenoel: 30 g",
+            "Reisessig: 13 g",
+            "Honig: 9 g",
+            "Salz: 1 g",
+            "Sesamoel: 2 g",
+            "Gurke: 120 g",
+            "Moehren: 60 g",
+            "Paprika: 120 g",
+            "Avocado: 180 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1228 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Erdnuss-Tofu, Pak Choi",
+        "source": "Veg Box, 164",
+        "recipeIngredient": [
+            "Reis: 120 g",
+            "Wasser: 240 g",
+            "Fruehlingszwiebel: 20 g",
+            "PakChoi: 300 g",
+            "Tofu: 400 g",
+            "Erdnussmus: 70 g",
+            "Ahornsirup: 14 g",
+            "Sojasosse: 40 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1536 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Blueberry Smoothie",
+        "source": "You Suck, 56",
+        "recipeIngredient": [
+            "Heidelbeeren: 150 g",
+            "Milch: 375 g",
+            "Banane: 110 g",
+            "Erdnussmus: 60 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "788 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Flammkuchen",
+        "source": null,
+        "recipeIngredient": [
+            "Tortillas: 186 g",
+            "Schmand: 100 g",
+            "Paprika: 50 g",
+            "Oliven: 10 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Oregano: 1 g",
+            "Birne: 100 g",
+            "Ziegenkaeserolle: 75 g",
+            "Honig: 10 g",
+            "Walknusskerne: 20 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1283 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Antipasti Pizza",
+        "source": null,
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Parmigiana di Melanzane",
+        "source": "Veg Box, 63",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Lasagne",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Olivenoel: 10 g",
+            "Hackfleisch: 500 g",
+            "Moehren: 200 g",
+            "Zwiebeln: 75 g",
+            "Petersilie: 40 g",
+            "Tomatenmark: 20 g",
+            "GeschaelteTomate: 800 g",
+            "Pfeffer: 1 g",
+            "Salz: 2 g",
+            "Milch: 500 g",
+            "Butter: 30 g",
+            "Mehl: 40 g",
+            "Salz: 1 g",
+            "Pfeffer: 0 g",
+            "Zitronenaft: 20 g",
+            "Muskatnuss: 2 g",
+            "Lasagneplatten: 175 g",
+            "GeriebenerKaese: 250 g"
+        ],
+        "recipeYield": "6 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "noodles",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3721 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Auberginen-Linsen-Auflauf",
+        "source": "Veg Box, 61",
+        "recipeIngredient": [
+            "Aubergine: 1000 g",
+            "Olivenoel: 30 g",
+            "Sojasosse: 18 g",
+            "Salz: 1 g",
+            "Moehren: 85 g",
+            "Olivenoel: 10 g",
+            "Salz: 0 g",
+            "Pfeffer: 0 g",
+            "BrauneLinsen: 265 g",
+            "Cheddar: 75 g",
+            "Tomate: 400 g",
+            "Olivenoel: 140 g",
+            "Mehl: 100 g",
+            "Milch: 1000 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Zitronenaft: 5 g"
+        ],
+        "recipeYield": "6 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3390 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Shepherd's Pie",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Kartoffeln: 800 g",
+            "Moehren: 300 g",
+            "Zwiebeln: 100 g",
+            "Hackfleisch: 500 g",
+            "BrauneLinsen: 265 g",
+            "Tomatenmark: 30 g",
+            "Erbsen: 100 g",
+            "Thymian: 5 g",
+            "Gemuesebruehe: 150 g",
+            "Worcestershiresauce: 10 g",
+            "Salz: 3 g",
+            "Pfeffer: 2 g",
+            "Milch: 125 g",
+            "Butter: 20 g",
+            "Muskatnuss: 2 g",
+            "Cheddar: 100 g"
+        ],
+        "recipeYield": "5 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2946 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Risotto mit Gorgonzola",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Zwiebeln: 50 g",
+            "Olivenoel: 10 g",
+            "Butter: 10 g",
+            "Risottoreis: 300 g",
+            "Weisswein: 50 g",
+            "Gemuesebruehe: 1000 g",
+            "Birne: 200 g",
+            "Gorgonzola: 150 g",
+            "Walknusskerne: 60 g",
+            "Petersilie: 15 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2446 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Risotto + gegrillte Paprika",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Zwiebeln: 100 g",
+            "Paprika: 400 g",
+            "Rapsoel: 40 g",
+            "Risottoreis: 350 g",
+            "Gemuesebruehe: 1000 g",
+            "Zitronenaft: 10 g",
+            "Pfeffer: 1 g",
+            "Chiliflocken: 1 g",
+            "Frischkaese: 100 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2137 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Gemüserisotto",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Zucchini: 1000 g",
+            "Olivenoel: 10 g",
+            "Salz: 3 g",
+            "Rosmarin: 6 g",
+            "Olivenoel: 20 g",
+            "Zwiebeln: 70 g",
+            "Risottoreis: 400 g",
+            "Weisswein: 125 g",
+            "Gemuesebruehe: 1000 g",
+            "Pfeffer: 1 g",
+            "Parmesan: 30 g",
+            "Rucola: 40 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2254 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Kichererbsensalat",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Kichererbsen: 265 g",
+            "Rapsoel: 10 g",
+            "Paprikapulver: 2 g",
+            "Salz: 0 g",
+            "Pfeffer: 0 g",
+            "Gurke: 350 g",
+            "Tomate: 250 g",
+            "Zwiebeln: 30 g",
+            "Feta: 200 g",
+            "Petersilie: 40 g",
+            "Balsamicoessig: 30 g",
+            "Olivenoel: 30 g",
+            "Honig: 9 g",
+            "Senf: 9 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1336 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Leos Linsensalat",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Nudeln: 300 g",
+            "Wasser: 375 g",
+            "Belugalinsen: 125 g",
+            "Wasser: 200 g",
+            "Rucola: 125 g",
+            "Tomate: 100 g",
+            "GetrockneteTomaten: 50 g",
+            "Fruehlingszwiebel: 50 g",
+            "Zwiebeln: 70 g",
+            "Ziegenkaeserolle: 75 g",
+            "Honig: 7 g",
+            "Olivenoel: 25 g",
+            "Salz: 5 g",
+            "Pfeffer: 2 g",
+            "Majoran: 3 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "noodles",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2110 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Crunchy Thai Peanut & Quinoa Salad",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Quinoa: 130 g",
+            "Wasser: 360 g",
+            "Rotkohl: 140 g",
+            "Moehren: 100 g",
+            "Erbsen: 100 g",
+            "Erdnuesse: 35 g",
+            "Erdnussmus: 60 g",
+            "Sojasosse: 45 g",
+            "Ahornsirup: 20 g",
+            "Reisessig: 15 g",
+            "Sesamoel: 4 g",
+            "Ingwer: 5 g",
+            "Limettensaft: 20 g",
+            "Chiliflocken: 1 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1346 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Orientalischer Blumenkohl-Linsensalat",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Belugalinsen: 300 g",
+            "Wasser: 600 g",
+            "Blumenkohl: 800 g",
+            "Zwiebeln: 70 g",
+            "Olivenoel: 80 g",
+            "RasElHanout: 3 g",
+            "Salz: 7 g",
+            "Pfeffer: 0 g",
+            "Cashewkerne: 100 g",
+            "Olivenoel: 80 g",
+            "Rosinen: 80 g",
+            "Zitronenaft: 70 g",
+            "Petersilie: 10 g",
+            "Minze: 8 g",
+            "Wasser: 160 g",
+            "Zitronenaft: 40 g",
+            "Agavensirup: 15 g",
+            "Sesamoel: 7 g",
+            "Cashewkerne: 100 g",
+            "Chiliflocken: 0 g",
+            "Sojasosse: 20 g"
+        ],
+        "recipeYield": "7 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "4119 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Avocado-Ziegenkäse Salat",
+        "source": "Ordner",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Sweet Potato Salad",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Suesskartoffel: 500 g",
+            "Olivenoel: 10 g",
+            "Salz: 5 g",
+            "Spinat: 150 g",
+            "Zwiebeln: 40 g",
+            "Apfelessig: 25 g",
+            "Zitronenaft: 25 g",
+            "Cranberries: 50 g",
+            "Avocado: 120 g",
+            "Salz: 0 g",
+            "Pfeffer: 0 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "989 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Rote-Bete-Salat",
+        "source": "Veg box, 78",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Cauliflower Salad",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Blumenkohl: 850 g",
+            "Kichererbsen: 400 g",
+            "Olivenoel: 50 g",
+            "Chiliflocken: 1 g",
+            "Paprikapulver: 2 g",
+            "Pfeffer: 1 g",
+            "Salz: 2 g",
+            "Salatblaetter: 240 g",
+            "Gurke: 350 g",
+            "ItalienischeKrauter: 15 g",
+            "Feta: 125 g",
+            "Avocado: 250 g",
+            "Olivenoel: 50 g",
+            "Zitronenaft: 50 g",
+            "Senf: 30 g",
+            "Tahini: 50 g",
+            "Honig: 35 g",
+            "Apfelessig: 15 g"
+        ],
+        "recipeYield": "5 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2999 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Sommerrollen",
+        "source": null,
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Israelischer Salat",
+        "source": "Ordner",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Quinoa Salad",
+        "source": "You Suck, 127",
+        "recipeIngredient": [
+            "Quinoa: 200 g",
+            "Wasser: 400 g",
+            "Salz: 3 g",
+            "Olivenoel: 40 g",
+            "Balsamicoessig: 30 g",
+            "Ahornsirup: 5 g",
+            "Zwiebeln: 35 g",
+            "Kichererbsen: 265 g",
+            "Oliven: 110 g",
+            "Limettensaft: 10 g",
+            "Pfeffer: 0 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1610 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Zimtschnecke für 1",
+        "source": "PC, 103",
+        "recipeIngredient": [
+            "Mehl: 60 g",
+            "Backpulver: 5 g",
+            "Zucker: 10 g",
+            "Rapsoel: 10 g",
+            "Milch: 20 g",
+            "Zucker: 10 g",
+            "Zimt: 2 g",
+            "Zimt: 1 g",
+            "Butter: 7 g",
+            "Butter: 7 g",
+            "Puderzucker: 15 g",
+            "Milch: 3 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "sweet"
+        ],
+        "nutrition": {
+            "calories": "557 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Ofenkartoffeln mit Kräuterquark",
+        "source": null,
+        "recipeIngredient": [
+            "Kartoffeln: 600 g",
+            "Quark: 250 g",
+            "ItalienischeKrauter: 10 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "637 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Acai-Bowl",
+        "source": "selfmade",
+        "recipeIngredient": [
+            "Walknusskerne: 40 g",
+            "Pistazien: 20 g",
+            "Himbeeren: 40 g",
+            "Heidelbeeren: 40 g",
+            "Brombeeren: 40 g",
+            "AcaiPueree: 100 g",
+            "Orange: 150 g",
+            "Banane: 150 g",
+            "Beerenmischung: 100 g",
+            "Vanilleextract: 2 g",
+            "Leinsamen: 20 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "913 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Reibekuchen mit Apfelkompott",
+        "source": "selfmade",
+        "recipeIngredient": [
+            "Apfel: 250 g",
+            "Wasser: 20 g",
+            "Kartoffeln: 500 g",
+            "Zwiebeln: 50 g",
+            "Mehl: 20 g",
+            "Ei: 55 g",
+            "Salz: 4 g",
+            "Pfeffer: 0 g",
+            "Rapsoel: 40 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1045 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Onigirazu - Tofu-Chili-Mayo",
+        "source": "PC, 20",
+        "recipeIngredient": [
+            "Reis: 40 g",
+            "Wasser: 60 g",
+            "Salz: 1 g",
+            "Gurke: 50 g",
+            "Sesam: 7 g",
+            "Noriblatt: 3 g",
+            "Tofu: 70 g",
+            "Mayonnaise: 10 g",
+            "Srirachasauce: 5 g",
+            "Fruehlingszwiebel: 10 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "360 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Onigirazu - Tofu-Teriyaki",
+        "source": "PC, 20",
+        "recipeIngredient": [
+            "Reis: 40 g",
+            "Wasser: 60 g",
+            "Salz: 1 g",
+            "Gurke: 50 g",
+            "Sesam: 7 g",
+            "Noriblatt: 3 g",
+            "Tofu: 70 g",
+            "Teriyakisauce: 15 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "rice",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "339 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Amerikanische Pancakes",
+        "source": "Ordner",
+        "recipeIngredient": [
+            "Ei: 110 g",
+            "Naturjoghurt: 150 g",
+            "Milch: 60 g",
+            "Backpulver: 8 g",
+            "Salz: 1 g",
+            "Mehl: 100 g",
+            "Kokosoel: 14 g",
+            "Ahornsirup: 40 g",
+            "Erdbeeren: 100 g",
+            "Heidelbeere: 50 g",
+            "Banane: 50 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "996 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Karottensalat",
+        "source": "selfmade",
+        "recipeIngredient": [
+            "Moehren: 1000 g",
+            "Apfel: 300 g",
+            "Zitronenaft: 50 g",
+            "Zucker: 20 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "714 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Polentaauflauf mit Spinat",
+        "source": "selfmade",
+        "recipeIngredient": [
+            "Polenta: 300 g",
+            "Gemuesebruehe: 900 g",
+            "Olivenoel: 10 g",
+            "Muskatnuss: 1 g",
+            "Zwiebeln: 75 g",
+            "Pinienkerne: 20 g",
+            "Spinat: 500 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Muskatnuss: 3 g",
+            "Olivenoel: 10 g",
+            "Feta: 150 g",
+            "Tomate: 150 g",
+            "ItalienischeKrauter: 10 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2004 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Karotten-Pistazien-Müsliriegel",
+        "source": "Veg Box, 155",
+        "recipeIngredient": [
+            "Moehren: 100 g",
+            "Pistazien: 100 g",
+            "Haferflocken: 200 g",
+            "Mehl: 75 g",
+            "Zucker: 125 g",
+            "Rapsoel: 150 g",
+            "Ahornsirup: 50 g"
+        ],
+        "recipeYield": "6 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "sweet"
+        ],
+        "nutrition": {
+            "calories": "3551 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Goldene Müsliriegel",
+        "source": "Yuka, 214 / Gruppe",
+        "recipeIngredient": [
+            "Haferflocken: 50 g",
+            "Dattel: 150 g",
+            "Mandelmus: 80 g",
+            "Haselnusskerne: 150 g",
+            "GetrockneteAprikosen: 100 g",
+            "Sesam: 50 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "sweet"
+        ],
+        "nutrition": {
+            "calories": "2655 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Kakao-Energy-Balls",
+        "source": "Yuka, 220 / Gruppe",
+        "recipeIngredient": [
+            "Dattel: 200 g",
+            "Vanilleextract: 5 g",
+            "Salz: 1 g",
+            "Mandel: 200 g",
+            "Erdnussmus: 40 g",
+            "Kakaopulver: 20 g",
+            "Sesam: 10 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "sweet"
+        ],
+        "nutrition": {
+            "calories": "2206 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Gebackener Erdnuss-Tofu",
+        "source": "PC, 32",
+        "recipeIngredient": [
+            "Tofu: 400 g",
+            "Erdnussmus: 90 g",
+            "Limettensaft: 25 g",
+            "Knoblauchpulver: 2 g",
+            "Ingwerpulver: 1 g",
+            "Sojasosse: 25 g",
+            "Salz: 0 g",
+            "Agavensirup: 45 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1287 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Zucchini-Pashtida",
+        "source": "EatSmarter! 3/2024, 132",
+        "recipeIngredient": [
+            "Zucchini: 400 g",
+            "Salz: 3 g",
+            "GriechischerJoghurt: 200 g",
+            "SaureSahne: 200 g",
+            "Ei: 180 g",
+            "Mehl: 15 g",
+            "Salz: 3 g",
+            "Pfeffer: 1 g",
+            "ItalienischeKrauter: 15 g",
+            "Feta: 150 g",
+            "Butter: 50 g",
+            "Filoteig: 125 g",
+            "Sesam: 10 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2102 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Chinakohl-Apfel-Salat",
+        "source": "selfmade",
+        "recipeIngredient": [
+            "Chinakohl: 600 g",
+            "Apfel: 300 g",
+            "Sahne: 150 g",
+            "Salz: 1 g",
+            "Pfeffer: 0 g",
+            "Zucker: 3 g",
+            "Rapsoel: 15 g",
+            "Krauteressig: 12 g"
+        ],
+        "recipeYield": "1 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "870 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Spitzkohl aus dem Ofen",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Spitzkohl: 1000 g",
+            "Olivenoel: 40 g",
+            "Kartoffeln: 500 g",
+            "Sahne: 200 g",
+            "Parmesan: 30 g",
+            "Salz: 2 g",
+            "Pfeffer: 1 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1678 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Lachs im Ofen mit Ofenkartoffeln",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Lachs: 250 g",
+            "Olivenoel: 40 g",
+            "Salz: 5 g",
+            "Kartoffeln: 1000 g",
+            "Olivenoel: 40 g",
+            "Salz: 3 g",
+            "Dill: 10 g",
+            "Olivenoel: 10 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Zitronenaft: 10 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2010 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Salat mit gerösteten Kürbis und Feta",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "HokkaidoKuerbis: 500 g",
+            "Olivenoel: 40 g",
+            "Paprikapulver: 1 g",
+            "Olivenoel: 60 g",
+            "Krauteressig: 40 g",
+            "Senf: 5 g",
+            "Honig: 5 g",
+            "Rucola: 125 g",
+            "Feta: 200 g",
+            "Kuerbiskerne: 20 g",
+            "Salz: 2 g",
+            "Pfeffer: 1 g"
+        ],
+        "recipeYield": "3 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1855 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Spaghettikürbis mit Blattspinat und Feta aus dem Ofen",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Spaghettikuerbis: 1000 g",
+            "Olivenoel: 20 g",
+            "Spinat: 250 g",
+            "Tomate: 50 g",
+            "Feta: 150 g",
+            "Sahne: 150 g",
+            "Salz: 2 g",
+            "Pfeffer: 1 g",
+            "Pinienkerne: 20 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1453 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Gesunde Carrot Cake Energy Balls",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Mandel: 50 g",
+            "Walknusskerne: 25 g",
+            "Moehren: 100 g",
+            "Dattel: 200 g",
+            "Kokosraspeln: 40 g",
+            "Ingwerpulver: 1 g",
+            "Zimt: 1 g",
+            "Salz: 1 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "sweet"
+        ],
+        "nutrition": {
+            "calories": "1358 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Cremiges Gemüsegratin",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Spitzkohl: 400 g",
+            "Brokkoli: 400 g",
+            "Olivenoel: 10 g",
+            "Salz: 3 g",
+            "Semmelbroesel: 75 g",
+            "Nudeln: 300 g",
+            "Erbsen: 200 g",
+            "Spinat: 250 g",
+            "Butter: 75 g",
+            "Mehl: 75 g",
+            "Milch: 750 g",
+            "Senf: 5 g",
+            "GeriebenerKaese: 200 g",
+            "Muskatnuss: 3 g",
+            "Pfeffer: 1 g"
+        ],
+        "recipeYield": "6 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "noodles",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3848 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Veggie-Moussaka",
+        "source": "Gruppe",
+        "recipeIngredient": [
+            "Kartoffeln: 500 g",
+            "Zwiebeln: 75 g",
+            "Thymian: 10 g",
+            "Salz: 2 g",
+            "Pfeffer: 1 g",
+            "Olivenoel: 70 g",
+            "Aubergine: 500 g",
+            "Zucchini: 400 g",
+            "Belugalinsen: 200 g",
+            "Zwiebeln: 75 g",
+            "Olivenoel: 10 g",
+            "Zimt: 1 g",
+            "Muskatnuss: 1 g",
+            "Gemuesebruehe: 120 g",
+            "gehackteTomaten: 400 g",
+            "Oregano: 2 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Butter: 70 g",
+            "Mehl: 70 g",
+            "Milch: 700 g",
+            "Muskatnuss: 3 g",
+            "Parmesan: 80 g",
+            "Feta: 50 g"
+        ],
+        "recipeYield": "6 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "potatoes",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "3698 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Kürbis-Kohl-Lasagne mit Pesto",
+        "source": "Veg Box, 130",
+        "recipeIngredient": [
+            "Gruenkohl: 200 g",
+            "Rapsoel: 10 g",
+            "Salz: 3 g",
+            "Pfeffer: 1 g",
+            "Lauch: 400 g",
+            "ButternutKuerbis: 500 g",
+            "gehackteTomaten: 400 g",
+            "Pesto: 100 g",
+            "Rapsoel: 70 g",
+            "Mehl: 70 g",
+            "Milch: 750 g",
+            "Cheddar: 25 g",
+            "Salz: 1 g",
+            "Pfeffer: 1 g",
+            "Lasagneplatten: 250 g",
+            "Semmelbroesel: 30 g",
+            "Rapsoel: 10 g",
+            "Cheddar: 75 g"
+        ],
+        "recipeYield": "7 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "noodles",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "4037 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Aubergine mit Sesam-Couscous-Crumble",
+        "source": "slowly veggie! 7, 80",
+        "recipeIngredient": [
+            "Sesam: 40 g",
+            "Couscous: 125 g",
+            "Mehl: 30 g",
+            "Butter: 100 g",
+            "Salz: 1 g",
+            "Aubergine: 1000 g",
+            "Zwiebeln: 100 g",
+            "Chiliflocken: 1 g",
+            "Tomate: 400 g",
+            "Dattel: 50 g",
+            "Granatapfel: 250 g",
+            "Erdnussoel: 30 g",
+            "Gemuesebruehe: 200 g",
+            "Kreuzkuemmel: 3 g"
+        ],
+        "recipeYield": "4 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "2414 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Tomatensalat mit Thunfisch und Feta",
+        "source": "eat smarter, 44",
+        "recipeIngredient": [
+            "Tomate: 1000 g",
+            "Petersilie: 10 g",
+            "Thunfisch: 200 g",
+            "Feta: 200 g",
+            "Zwiebeln: 60 g",
+            "Olivenoel: 40 g",
+            "Krauteressig: 40 g",
+            "Honig: 10 g",
+            "Salz: 3 g",
+            "Pfeffer: 1 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1279 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Gurkenkracher Salat",
+        "source": "EatSmarter! 3/2024, 80",
+        "recipeIngredient": [
+            "Paprika: 200 g",
+            "Salz: 2 g",
+            "Gurke: 400 g",
+            "Kichererbsen: 60 g",
+            "Gemuesebruehe: 40 g",
+            "Reisessig: 30 g",
+            "Olivenoel: 60 g",
+            "Haselnusskerne: 40 g",
+            "Reisnudeln: 100 g",
+            "Dill: 5 g",
+            "Minze: 5 g"
+        ],
+        "recipeYield": "2 portions",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "salad",
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "1336 kcal"
+        }
+    },
+    {
+        "context": "https://schema.org",
+        "type": "Recipe",
+        "name": "Double Mac and Cheese",
+        "source": "slowly veggie! 7, 96",
+        "recipeIngredient": [],
+        "recipeYield": "0 portion",
+        "recipeCuisine": [],
+        "recipeCategory": [
+            "day-to-day"
+        ],
+        "nutrition": {
+            "calories": "0 kcal"
+        }
+    }
+]
