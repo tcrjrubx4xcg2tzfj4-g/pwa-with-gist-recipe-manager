@@ -6,14 +6,6 @@ import re
 from datetime import datetime, timezone
 
 
-def parse_servings(recipe_yield):
-    """Extract numeric serving count from recipeYield string."""
-    if not recipe_yield:
-        return 0
-    match = re.search(r'(\d+)', str(recipe_yield))
-    return int(match.group(1)) if match else 0
-
-
 def convert_ingredient(ingredient_str):
     """Convert schema.org 'Name: amount' strings to app format."""
     if not ingredient_str:
@@ -37,7 +29,6 @@ def main():
 
     converted = []
     for idx, src in enumerate(source_recipes, start=1):
-        servings = parse_servings(src.get('recipeYield', ''))
         ingredients = src.get('recipeIngredient', []) or []
 
         source = src.get('source') or ''
@@ -50,7 +41,6 @@ def main():
         recipe = {
             "id": make_id(idx),
             "name": src.get('name', 'Untitled Recipe'),
-            "servings": servings,
             "source": source,
             "calories": calories,
             "ingredients": ingredients,
