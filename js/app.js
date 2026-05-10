@@ -354,8 +354,8 @@ function populateForm(recipe) {
   nameInput.value = recipe.name;
   sourceInput.value = recipe.source || "";
   caloriesInput.value = recipe.calories || "";
-  ingredientsInput.value = recipe.ingredients.join("\n");
-  instructionsInput.value = recipe.instructions.join("\n");
+  ingredientsInput.value = (recipe.ingredients || []).join("\n");
+  instructionsInput.value = (recipe.instructions || []).join("\n");
   notesInput.value = recipe.notes ? recipe.notes.join("\n") : "";
   formTitle.textContent = "✏️ Edit Recipe";
   saveBtn.textContent = "💾 Update Recipe";
@@ -399,7 +399,7 @@ function getFilteredRecipes() {
     const matchesSearch =
       !searchTerm ||
       recipe.name.toLowerCase().includes(searchTerm) ||
-      recipe.ingredients.some((ing) => ing.toLowerCase().includes(searchTerm));
+      recipe.ingredients && recipe.ingredients.some((ing) => ing.toLowerCase().includes(searchTerm));
     return matchesSearch;
   });
 }
@@ -409,8 +409,8 @@ function createRecipeCard(recipe) {
   card.className = "recipe-card";
   card.dataset.id = recipe.id;
 
-  const ingredientsPreview = recipe.ingredients.slice(0, 3).join(", ");
-  const hasMoreIngredients = recipe.ingredients.length > 3;
+  const ingredientsPreview = (recipe.ingredients || []).slice(0, 3).join(", ");
+  const hasMoreIngredients = (recipe.ingredients || []).length > 3;
 
   card.innerHTML = `
         <div class="recipe-card-header">
@@ -421,9 +421,9 @@ function createRecipeCard(recipe) {
             ${recipe.source ? `<span>📖 ${escapeHtml(recipe.source)}</span>` : ""}
             <span>📅 ${new Date(recipe.createdAt).toLocaleDateString()}</span>
         </div>
-        <div class="recipe-card-ingredients">
+        ${recipe.ingredients && recipe.ingredients.length > 0 ? `<div class="recipe-card-ingredients">
             <strong>Ingredients:</strong> ${escapeHtml(ingredientsPreview)}${hasMoreIngredients ? "..." : ""}
-        </div>
+        </div>` : ""}
         <div class="recipe-card-actions">
             <button class="btn btn-secondary btn-small" data-action="view" data-id="${recipe.id}">👁️ View</button>
             <button class="btn btn-secondary btn-small" data-action="edit" data-id="${recipe.id}">✏️ Edit</button>
@@ -492,18 +492,22 @@ function showRecipeModal(id) {
             ${recipe.calories ? `<span>🔥 ${recipe.calories} calories</span> <span>👥 ${calculateServings(recipe.calories)} servings</span>` : ""}
             ${recipe.source ? `<span>📖 Source: ${escapeHtml(recipe.source)}</span>` : ""}
         </div>
+        ${recipe.ingredients && recipe.ingredients.length > 0 ? `
         <div class="modal-section">
             <h3>📋 Ingredients</h3>
             <ul>
                 ${recipe.ingredients.map((ing) => `<li>${escapeHtml(ing)}</li>`).join("")}
             </ul>
         </div>
+        ` : ""}
+        ${recipe.instructions && recipe.instructions.length > 0 ? `
         <div class="modal-section">
             <h3>📝 Instructions</h3>
             <ol>
                 ${recipe.instructions.map((inst) => `<li>${escapeHtml(inst)}</li>`).join("")}
             </ol>
         </div>
+        ` : ""}
         ${
           recipe.notes && recipe.notes.length > 0
             ? `
