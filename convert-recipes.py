@@ -22,13 +22,6 @@ def convert_ingredient(ingredient_str):
     return str(ingredient_str).strip()
 
 
-def convert_category(categories):
-    """Pick the first category or default to 'uncategorized'."""
-    if isinstance(categories, list) and len(categories) > 0:
-        return str(categories[0])
-    return 'uncategorized'
-
-
 def make_id(index):
     """Generate an ID matching the app pattern."""
     now = datetime.now(timezone.utc)
@@ -57,7 +50,6 @@ def main():
         recipe = {
             "id": make_id(idx),
             "name": src.get('name', 'Untitled Recipe'),
-            "category": convert_category(src.get('recipeCategory')),
             "servings": servings,
             "source": source,
             "calories": calories,

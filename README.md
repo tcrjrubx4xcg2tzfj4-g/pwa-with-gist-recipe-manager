@@ -12,7 +12,7 @@ A Progressive Web App for managing recipes with GitHub Gist as a backend for mul
 - **GitHub Gist Backend** - Sync recipes across multiple devices
 - **Last-Write-Wins** - Simple conflict resolution for multi-device editing
 - **Dark Mode** - Toggle between light and dark themes
-- **Search & Filter** - Search recipes by name and filter by category
+- **Search** - Search recipes by name and ingredients
 
 ## File Structure
 

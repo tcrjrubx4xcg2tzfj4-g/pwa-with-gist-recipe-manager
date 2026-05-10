@@ -26,7 +26,6 @@ const formTitle = document.getElementById('form-title');
 const recipeForm = document.getElementById('recipe-form');
 const recipeIdInput = document.getElementById('recipe-id');
 const nameInput = document.getElementById('recipe-name');
-const categoryInput = document.getElementById('recipe-category');
 const servingsInput = document.getElementById('recipe-servings');
 const sourceInput = document.getElementById('recipe-source');
 const caloriesInput = document.getElementById('recipe-calories');
@@ -37,7 +36,6 @@ const saveBtn = document.getElementById('save-btn');
 const recipeListEl = document.getElementById('recipe-list');
 const recipeCountEl = document.getElementById('recipe-count');
 const searchInput = document.getElementById('search-input');
-const categoryFilter = document.getElementById('category-filter');
 const modalOverlay = document.getElementById('modal-overlay');
 const modalContent = document.getElementById('modal-content');
 const modalClose = document.getElementById('modal-close');
@@ -268,7 +266,6 @@ function addRecipe(recipeData) {
     const recipe = {
         id: generateId(),
         name: recipeData.name,
-        category: recipeData.category,
         servings: recipeData.servings,
         source: recipeData.source,
         calories: recipeData.calories,
@@ -294,7 +291,6 @@ function updateRecipe(id, recipeData) {
         recipes[index] = {
             ...recipes[index],
             name: recipeData.name,
-            category: recipeData.category,
             servings: recipeData.servings,
             source: recipeData.source,
             calories: recipeData.calories,
@@ -346,7 +342,6 @@ function populateForm(recipe) {
     editingId = recipe.id;
     recipeIdInput.value = recipe.id;
     nameInput.value = recipe.name;
-    categoryInput.value = recipe.category;
     servingsInput.value = recipe.servings || '';
     sourceInput.value = recipe.source || '';
     caloriesInput.value = recipe.calories || '';
@@ -363,7 +358,6 @@ function handleFormSubmit(e) {
 
     const recipeData = {
         name: nameInput.value.trim(),
-        category: categoryInput.value,
         servings: servingsInput.value ? parseInt(servingsInput.value) : null,
         source: sourceInput.value.trim() || null,
         calories: caloriesInput.value ? parseInt(caloriesInput.value) : null,
@@ -386,27 +380,13 @@ function handleFormSubmit(e) {
 
 function getFilteredRecipes() {
     const searchTerm = searchInput.value.toLowerCase();
-    const category = categoryFilter.value;
 
     return recipes.filter(recipe => {
         const matchesSearch = !searchTerm ||
             recipe.name.toLowerCase().includes(searchTerm) ||
             recipe.ingredients.some(ing => ing.toLowerCase().includes(searchTerm));
-        const matchesCategory = category === 'all' || recipe.category === category;
-        return matchesSearch && matchesCategory;
+        return matchesSearch;
     });
-}
-
-function getCategoryEmoji(category) {
-    const emojis = {
-        breakfast: '🥞',
-        lunch: '🥪',
-        dinner: '🍽️',
-        dessert: '🍰',
-        snack: '🍿',
-        drink: '🍹'
-    };
-    return emojis[category] || '🍴';
 }
 
 function createRecipeCard(recipe) {
@@ -420,7 +400,6 @@ function createRecipeCard(recipe) {
     card.innerHTML = `
         <div class="recipe-card-header">
             <h3 class="recipe-card-title">${escapeHtml(recipe.name)}</h3>
-            <span class="recipe-card-category">${getCategoryEmoji(recipe.category)} ${recipe.category}</span>
         </div>
         <div class="recipe-card-meta">
             ${recipe.servings ? `<span>👥 ${recipe.servings} servings</span>` : ''}
@@ -494,7 +473,6 @@ function showRecipeModal(id) {
     modalContent.innerHTML = `
         <div class="modal-header">
             <h2>${escapeHtml(recipe.name)}</h2>
-            <span class="recipe-card-category">${getCategoryEmoji(recipe.category)} ${recipe.category}</span>
         </div>
         <div class="modal-meta">
             ${recipe.servings ? `<span>👥 ${recipe.servings} servings</span>` : ''}
@@ -602,7 +580,6 @@ function escapeHtml(text) {
 function setupEventListeners() {
     recipeForm.addEventListener('submit', handleFormSubmit);
     searchInput.addEventListener('input', renderRecipes);
-    categoryFilter.addEventListener('change', renderRecipes);
     themeToggleBtn.addEventListener('click', toggleTheme);
     syncNowBtn.addEventListener('click', () => syncWithGist());
 

@@ -1,9 +1,8 @@
 {
   "recipes": [
     {
-      "id": "recipe-1778417953347-001",
+      "id": "recipe-1778433793312-001",
       "name": "Feine Möhren-Kartoffel-Suppe",
-      "category": "soup",
       "servings": 2,
       "source": "Ordner",
       "calories": 1212,
@@ -17,13 +16,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-002",
+      "id": "recipe-1778433793312-002",
       "name": "Himmel & Erde",
-      "category": "potatoes",
       "servings": 4,
       "source": "Ordner",
       "calories": 2410,
@@ -36,13 +34,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-003",
+      "id": "recipe-1778433793313-003",
       "name": "Blaubeer Sommersalat",
-      "category": "salad",
       "servings": 2,
       "source": "Ordner",
       "calories": 1174,
@@ -63,13 +60,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-004",
+      "id": "recipe-1778433793313-004",
       "name": "Grüne-Göttin-Salat",
-      "category": "salad",
       "servings": 1,
       "source": "Plantiful Cooking, 25",
       "calories": 662,
@@ -88,13 +84,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-005",
+      "id": "recipe-1778433793313-005",
       "name": "Grüne-Göttin-Salat mit Couscous",
-      "category": "salad",
       "servings": 4,
       "source": "Plantiful Cooking, 25",
       "calories": 2257,
@@ -119,13 +114,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-006",
+      "id": "recipe-1778433793313-006",
       "name": "Grüne-Göttin-Salat mit Tofu",
-      "category": "salad",
       "servings": 2,
       "source": "Plantiful Cooking, 25",
       "calories": 950,
@@ -145,13 +139,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-007",
+      "id": "recipe-1778433793313-007",
       "name": "Maple-Baked Salmon",
-      "category": "rice",
       "servings": 2,
       "source": "You Suck At Cooking, 175",
       "calories": 1168,
@@ -166,13 +159,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-008",
+      "id": "recipe-1778433793313-008",
       "name": "Blumenkohl \"Hack\"-Pide",
-      "category": "day-to-day",
       "servings": 5,
       "source": "Plantiful Cooking, 106",
       "calories": 3146,
@@ -208,13 +200,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-009",
+      "id": "recipe-1778433793313-009",
       "name": "Torteletts Karotten + Walnüsse",
-      "category": "day-to-day",
       "servings": 4,
       "source": "Veg Box, 145",
       "calories": 2199,
@@ -230,39 +221,36 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-010",
+      "id": "recipe-1778433793313-010",
       "name": "Türkische Teigtaschen",
-      "category": "day-to-day",
       "servings": 0,
       "source": "Ordner",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-011",
+      "id": "recipe-1778433793313-011",
       "name": "Pita + Minze",
-      "category": "day-to-day",
       "servings": 0,
       "source": "Gruppe",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-012",
+      "id": "recipe-1778433793313-012",
       "name": "Hummus",
-      "category": "day-to-day",
       "servings": 1,
       "source": "Gruppe",
       "calories": 794,
@@ -282,52 +270,48 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-013",
+      "id": "recipe-1778433793313-013",
       "name": "Crispy Rice",
-      "category": "day-to-day",
       "servings": 0,
       "source": "PC, 38",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-014",
+      "id": "recipe-1778433793313-014",
       "name": "Wraps",
-      "category": "day-to-day",
       "servings": 0,
       "source": "",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-015",
+      "id": "recipe-1778433793313-015",
       "name": "Breakfast Sandwichest Med.",
-      "category": "day-to-day",
       "servings": 0,
       "source": "You Suck, 102",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-016",
+      "id": "recipe-1778433793313-016",
       "name": "Brokkoli-Schinken Quiche",
-      "category": "day-to-day",
       "servings": 5,
       "source": "Ordner",
       "calories": 3293,
@@ -348,13 +332,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-017",
+      "id": "recipe-1778433793313-017",
       "name": "Ziegenkäse-Quiche",
-      "category": "day-to-day",
       "servings": 6,
       "source": "Gruppe",
       "calories": 3845,
@@ -380,39 +363,36 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-018",
+      "id": "recipe-1778433793313-018",
       "name": "Lauch-Hack-Suppe",
-      "category": "soup",
       "servings": 0,
       "source": "Ordner",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-019",
+      "id": "recipe-1778433793313-019",
       "name": "Pizzasuppe",
-      "category": "soup",
       "servings": 0,
       "source": "Ordner",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-020",
+      "id": "recipe-1778433793313-020",
       "name": "Marokkanische Karotten-Tajine",
-      "category": "rice",
       "servings": 4,
       "source": "Veg Box, 152",
       "calories": 2176,
@@ -431,13 +411,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-021",
+      "id": "recipe-1778433793313-021",
       "name": "Spicy Peanut Butter Soup",
-      "category": "soup",
       "servings": 3,
       "source": "You Suck, 133",
       "calories": 2018,
@@ -457,26 +436,24 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-022",
+      "id": "recipe-1778433793313-022",
       "name": "Gefüllte Paprika",
-      "category": "day-to-day",
       "servings": 0,
       "source": "",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-023",
+      "id": "recipe-1778433793313-023",
       "name": "Kumpir",
-      "category": "potatoes",
       "servings": 3,
       "source": "selfmade",
       "calories": 1547,
@@ -492,13 +469,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-024",
+      "id": "recipe-1778433793313-024",
       "name": "Ofengemüse",
-      "category": "potatoes",
       "servings": 4,
       "source": "",
       "calories": 2479,
@@ -521,13 +497,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-025",
+      "id": "recipe-1778433793313-025",
       "name": "Sesame-Roasted Broccoli",
-      "category": "day-to-day",
       "servings": 1,
       "source": "You Suck, 146",
       "calories": 431,
@@ -541,39 +516,36 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-026",
+      "id": "recipe-1778433793313-026",
       "name": "Spitzkohl aus dem Ofen",
-      "category": "day-to-day",
       "servings": 0,
       "source": "Gruppe",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-027",
+      "id": "recipe-1778433793313-027",
       "name": "Sweet Potato Wedges",
-      "category": "day-to-day",
       "servings": 0,
       "source": "You Suck, 82",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-028",
+      "id": "recipe-1778433793313-028",
       "name": "Auberginen Bolognese",
-      "category": "noodles",
       "servings": 5,
       "source": "Gruppe",
       "calories": 2706,
@@ -594,13 +566,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-029",
+      "id": "recipe-1778433793313-029",
       "name": "Davids Spagetthi Carbonara",
-      "category": "noodles",
       "servings": 2,
       "source": "Ordner",
       "calories": 1495,
@@ -615,26 +586,24 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-030",
+      "id": "recipe-1778433793313-030",
       "name": "Eblipfanne",
-      "category": "day-to-day",
       "servings": 0,
       "source": "",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-031",
+      "id": "recipe-1778433793313-031",
       "name": "Veggie Rice Bowl",
-      "category": "rice",
       "servings": 2,
       "source": "You Suck, 164",
       "calories": 1228,
@@ -655,13 +624,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-032",
+      "id": "recipe-1778433793313-032",
       "name": "Erdnuss-Tofu, Pak Choi",
-      "category": "rice",
       "servings": 3,
       "source": "Veg Box, 164",
       "calories": 1536,
@@ -677,13 +645,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-033",
+      "id": "recipe-1778433793313-033",
       "name": "Blueberry Smoothie",
-      "category": "day-to-day",
       "servings": 1,
       "source": "You Suck, 56",
       "calories": 788,
@@ -695,13 +662,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-034",
+      "id": "recipe-1778433793313-034",
       "name": "Flammkuchen",
-      "category": "day-to-day",
       "servings": 2,
       "source": "",
       "calories": 1283,
@@ -720,39 +686,36 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-035",
+      "id": "recipe-1778433793313-035",
       "name": "Antipasti Pizza",
-      "category": "day-to-day",
       "servings": 0,
       "source": "",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-036",
+      "id": "recipe-1778433793313-036",
       "name": "Parmigiana di Melanzane",
-      "category": "day-to-day",
       "servings": 0,
       "source": "Veg Box, 63",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-037",
+      "id": "recipe-1778433793313-037",
       "name": "Lasagne",
-      "category": "noodles",
       "servings": 6,
       "source": "Ordner",
       "calories": 3721,
@@ -778,13 +741,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-038",
+      "id": "recipe-1778433793313-038",
       "name": "Auberginen-Linsen-Auflauf",
-      "category": "day-to-day",
       "servings": 6,
       "source": "Veg Box, 61",
       "calories": 3390,
@@ -809,13 +771,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-039",
+      "id": "recipe-1778433793313-039",
       "name": "Shepherd's Pie",
-      "category": "potatoes",
       "servings": 5,
       "source": "Gruppe",
       "calories": 2946,
@@ -839,13 +800,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-040",
+      "id": "recipe-1778433793313-040",
       "name": "Risotto mit Gorgonzola",
-      "category": "rice",
       "servings": 4,
       "source": "Ordner",
       "calories": 2446,
@@ -865,13 +825,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-041",
+      "id": "recipe-1778433793313-041",
       "name": "Risotto + gegrillte Paprika",
-      "category": "rice",
       "servings": 4,
       "source": "Ordner",
       "calories": 2137,
@@ -888,13 +847,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-042",
+      "id": "recipe-1778433793313-042",
       "name": "Gemüserisotto",
-      "category": "rice",
       "servings": 4,
       "source": "Gruppe",
       "calories": 2254,
@@ -914,13 +872,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-043",
+      "id": "recipe-1778433793313-043",
       "name": "Kichererbsensalat",
-      "category": "salad",
       "servings": 2,
       "source": "Ordner",
       "calories": 1336,
@@ -942,13 +899,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-044",
+      "id": "recipe-1778433793313-044",
       "name": "Leos Linsensalat",
-      "category": "salad",
       "servings": 4,
       "source": "Gruppe",
       "calories": 2110,
@@ -971,13 +927,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-045",
+      "id": "recipe-1778433793313-045",
       "name": "Crunchy Thai Peanut & Quinoa Salad",
-      "category": "salad",
       "servings": 2,
       "source": "Gruppe",
       "calories": 1346,
@@ -999,13 +954,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-046",
+      "id": "recipe-1778433793313-046",
       "name": "Orientalischer Blumenkohl-Linsensalat",
-      "category": "salad",
       "servings": 7,
       "source": "Gruppe",
       "calories": 4119,
@@ -1034,26 +988,24 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-047",
+      "id": "recipe-1778433793313-047",
       "name": "Avocado-Ziegenkäse Salat",
-      "category": "salad",
       "servings": 0,
       "source": "Ordner",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-048",
+      "id": "recipe-1778433793313-048",
       "name": "Sweet Potato Salad",
-      "category": "salad",
       "servings": 2,
       "source": "Ordner",
       "calories": 989,
@@ -1072,26 +1024,24 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-049",
+      "id": "recipe-1778433793313-049",
       "name": "Rote-Bete-Salat",
-      "category": "salad",
       "servings": 0,
       "source": "Veg box, 78",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-050",
+      "id": "recipe-1778433793313-050",
       "name": "Cauliflower Salad",
-      "category": "salad",
       "servings": 5,
       "source": "Ordner",
       "calories": 2999,
@@ -1117,39 +1067,36 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-051",
+      "id": "recipe-1778433793313-051",
       "name": "Sommerrollen",
-      "category": "day-to-day",
       "servings": 0,
       "source": "",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-052",
+      "id": "recipe-1778433793313-052",
       "name": "Israelischer Salat",
-      "category": "salad",
       "servings": 0,
       "source": "Ordner",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-053",
+      "id": "recipe-1778433793313-053",
       "name": "Quinoa Salad",
-      "category": "salad",
       "servings": 3,
       "source": "You Suck, 127",
       "calories": 1610,
@@ -1168,13 +1115,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-054",
+      "id": "recipe-1778433793313-054",
       "name": "Zimtschnecke für 1",
-      "category": "sweet",
       "servings": 1,
       "source": "PC, 103",
       "calories": 557,
@@ -1194,13 +1140,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-055",
+      "id": "recipe-1778433793313-055",
       "name": "Ofenkartoffeln mit Kräuterquark",
-      "category": "potatoes",
       "servings": 1,
       "source": "",
       "calories": 637,
@@ -1213,13 +1158,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-056",
+      "id": "recipe-1778433793313-056",
       "name": "Acai-Bowl",
-      "category": "day-to-day",
       "servings": 2,
       "source": "selfmade",
       "calories": 913,
@@ -1238,13 +1182,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-057",
+      "id": "recipe-1778433793313-057",
       "name": "Reibekuchen mit Apfelkompott",
-      "category": "potatoes",
       "servings": 2,
       "source": "selfmade",
       "calories": 1045,
@@ -1261,13 +1204,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-058",
+      "id": "recipe-1778433793313-058",
       "name": "Onigirazu - Tofu-Chili-Mayo",
-      "category": "rice",
       "servings": 1,
       "source": "PC, 20",
       "calories": 360,
@@ -1285,13 +1227,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-059",
+      "id": "recipe-1778433793313-059",
       "name": "Onigirazu - Tofu-Teriyaki",
-      "category": "rice",
       "servings": 1,
       "source": "PC, 20",
       "calories": 339,
@@ -1307,13 +1248,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-060",
+      "id": "recipe-1778433793313-060",
       "name": "Amerikanische Pancakes",
-      "category": "day-to-day",
       "servings": 2,
       "source": "Ordner",
       "calories": 996,
@@ -1332,13 +1272,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-061",
+      "id": "recipe-1778433793313-061",
       "name": "Karottensalat",
-      "category": "salad",
       "servings": 1,
       "source": "selfmade",
       "calories": 714,
@@ -1350,13 +1289,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-062",
+      "id": "recipe-1778433793313-062",
       "name": "Polentaauflauf mit Spinat",
-      "category": "day-to-day",
       "servings": 3,
       "source": "selfmade",
       "calories": 2004,
@@ -1378,13 +1316,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-063",
+      "id": "recipe-1778433793313-063",
       "name": "Karotten-Pistazien-Müsliriegel",
-      "category": "sweet",
       "servings": 6,
       "source": "Veg Box, 155",
       "calories": 3551,
@@ -1399,13 +1336,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-064",
+      "id": "recipe-1778433793313-064",
       "name": "Goldene Müsliriegel",
-      "category": "sweet",
       "servings": 4,
       "source": "Yuka, 214 / Gruppe",
       "calories": 2655,
@@ -1419,13 +1355,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-065",
+      "id": "recipe-1778433793313-065",
       "name": "Kakao-Energy-Balls",
-      "category": "sweet",
       "servings": 4,
       "source": "Yuka, 220 / Gruppe",
       "calories": 2206,
@@ -1440,13 +1375,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-066",
+      "id": "recipe-1778433793313-066",
       "name": "Gebackener Erdnuss-Tofu",
-      "category": "day-to-day",
       "servings": 2,
       "source": "PC, 32",
       "calories": 1287,
@@ -1462,13 +1396,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-067",
+      "id": "recipe-1778433793313-067",
       "name": "Zucchini-Pashtida",
-      "category": "day-to-day",
       "servings": 4,
       "source": "EatSmarter! 3/2024, 132",
       "calories": 2102,
@@ -1489,13 +1422,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-068",
+      "id": "recipe-1778433793313-068",
       "name": "Chinakohl-Apfel-Salat",
-      "category": "salad",
       "servings": 1,
       "source": "selfmade",
       "calories": 870,
@@ -1511,13 +1443,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-069",
+      "id": "recipe-1778433793313-069",
       "name": "Spitzkohl aus dem Ofen",
-      "category": "potatoes",
       "servings": 3,
       "source": "Gruppe",
       "calories": 1678,
@@ -1532,13 +1463,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-070",
+      "id": "recipe-1778433793313-070",
       "name": "Lachs im Ofen mit Ofenkartoffeln",
-      "category": "potatoes",
       "servings": 3,
       "source": "Gruppe",
       "calories": 2010,
@@ -1557,13 +1487,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-071",
+      "id": "recipe-1778433793313-071",
       "name": "Salat mit gerösteten Kürbis und Feta",
-      "category": "salad",
       "servings": 3,
       "source": "Gruppe",
       "calories": 1855,
@@ -1583,13 +1512,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-072",
+      "id": "recipe-1778433793313-072",
       "name": "Spaghettikürbis mit Blattspinat und Feta aus dem Ofen",
-      "category": "day-to-day",
       "servings": 2,
       "source": "Gruppe",
       "calories": 1453,
@@ -1606,13 +1534,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-073",
+      "id": "recipe-1778433793313-073",
       "name": "Gesunde Carrot Cake Energy Balls",
-      "category": "sweet",
       "servings": 2,
       "source": "Gruppe",
       "calories": 1358,
@@ -1628,13 +1555,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-074",
+      "id": "recipe-1778433793313-074",
       "name": "Cremiges Gemüsegratin",
-      "category": "noodles",
       "servings": 6,
       "source": "Gruppe",
       "calories": 3848,
@@ -1657,13 +1583,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-075",
+      "id": "recipe-1778433793313-075",
       "name": "Veggie-Moussaka",
-      "category": "potatoes",
       "servings": 6,
       "source": "Gruppe",
       "calories": 3698,
@@ -1695,13 +1620,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-076",
+      "id": "recipe-1778433793313-076",
       "name": "Kürbis-Kohl-Lasagne mit Pesto",
-      "category": "noodles",
       "servings": 7,
       "source": "Veg Box, 130",
       "calories": 4037,
@@ -1727,13 +1651,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-077",
+      "id": "recipe-1778433793313-077",
       "name": "Aubergine mit Sesam-Couscous-Crumble",
-      "category": "day-to-day",
       "servings": 4,
       "source": "slowly veggie! 7, 80",
       "calories": 2414,
@@ -1755,13 +1678,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-078",
+      "id": "recipe-1778433793313-078",
       "name": "Tomatensalat mit Thunfisch und Feta",
-      "category": "salad",
       "servings": 2,
       "source": "eat smarter, 44",
       "calories": 1279,
@@ -1779,13 +1701,12 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-079",
+      "id": "recipe-1778433793313-079",
       "name": "Gurkenkracher Salat",
-      "category": "salad",
       "servings": 2,
       "source": "EatSmarter! 3/2024, 80",
       "calories": 1336,
@@ -1804,22 +1725,21 @@
       ],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     },
     {
-      "id": "recipe-1778417953347-080",
+      "id": "recipe-1778433793313-080",
       "name": "Double Mac and Cheese",
-      "category": "day-to-day",
       "servings": 0,
       "source": "slowly veggie! 7, 96",
       "calories": 0,
       "ingredients": [],
       "instructions": [],
       "notes": [],
-      "createdAt": "2026-05-10T12:59:13.347Z",
-      "updatedAt": "2026-05-10T12:59:13.347Z"
+      "createdAt": "2026-05-10T17:23:13.312Z",
+      "updatedAt": "2026-05-10T17:23:13.312Z"
     }
   ],
-  "lastUpdated": "2026-05-10T12:59:13.347Z"
+  "lastUpdated": "2026-05-10T17:23:13.312Z"
 }
