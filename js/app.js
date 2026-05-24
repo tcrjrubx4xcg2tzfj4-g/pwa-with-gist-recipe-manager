@@ -1,3 +1,23 @@
+/**
+ * @typedef {Object} Recipe
+ * @property {string}   id          - Unique ID, generated via generateId()
+ * @property {string}   name        - Recipe title (required)
+ * @property {?string}  source      - Source attribution, e.g. "Cookbook p. 42"
+ * @property {?number}  calories    - Total calories for the recipe
+ * @property {string[]} ingredients - Ingredient lines, e.g. ["2 cups flour", "3 eggs"]
+ * @property {string[]} instructions - Instruction steps, one per line
+ * @property {string[]} notes       - Additional notes, optional
+ * @property {string}   createdAt   - ISO 8601 timestamp of creation
+ * @property {string}   updatedAt   - ISO 8601 timestamp of last edit
+ */
+
+/**
+ * @typedef {Object} GistPayload
+ * @property {Recipe[]} recipes     - Full array of recipes
+ * @property {string}   lastUpdated - ISO 8601 timestamp of last write
+ * @property {Object}   files       - Gist file map (keyed by filename)
+ */
+
 // App Configuration
 const GIST_CONFIG = {
   id: "f4a344cb21cd8443b956360a1178dd9d",

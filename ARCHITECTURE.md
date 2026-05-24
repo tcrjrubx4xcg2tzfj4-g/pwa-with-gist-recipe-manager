@@ -1,0 +1,167 @@
+# Architecture
+
+## Project Overview
+
+A single-page PWA for managing recipes. Recipes live in a GitHub Gist (multi-device sync backend). The app works offline with localStorage and syncs via last-write-wins when online.
+
+## Data Model
+
+### Recipe Object
+
+```js
+{
+  id: string,            // Unique ID, e.g. "l4k2j3...". Generated via generateId().
+  name: string,          // Required. Recipe title.
+  source: string|null,   // Optional. Source attribution, e.g. "Cookbook p. 42".
+  calories: number|null, // Optional. Total calories for the recipe.
+  ingredients: string[], // Array of ingredient lines, e.g. ["2 cups flour", "3 eggs"].
+  instructions: string[],// Array of instruction steps, one per line.
+  notes: string[],       // Array of note lines. Optional.
+  createdAt: string,     // ISO 8601 timestamp.
+  updatedAt: string      // ISO 8601 timestamp. Updated on edit.
+}
+```
+
+### Gist Payload
+
+The gist stores one file (`recipes.json`) containing:
+
+```js
+{
+  recipes: Recipe[],     // Full array of recipes.
+  lastUpdated: string    // ISO 8601 timestamp of last write.
+}
+```
+
+Legacy format (flat array without wrapper object) is also handled on read.
+
+## Component Tree (DOM)
+
+```
+index.html
+├── header              # "🍳 Recipe Manager" title
+├── main
+│   ├── .status-bar     # Online/offline indicator + dark mode toggle
+│   ├── #token-card     # GitHub token input (hidden once configured)
+│   ├── #form-card      # Add/edit recipe form
+│   ├── #sync-status    # Sync status text + "Sync Now" button
+│   ├── .card           # Recipe list section
+│   │   ├── .section-header
+│   │   ├── .search-bar
+│   │   └── #recipe-list
+│   └── #install-btn    # PWA install prompt button
+├── footer
+└── #modal-overlay      # Recipe detail modal (hidden by default)
+```
+
+## State Management
+
+All state is held in module-level variables in `js/app.js`:
+
+| Variable          | Type      | Purpose                                      |
+|-------------------|-----------|----------------------------------------------|
+| `recipes`         | `Recipe[]`| Master recipe list. Source of truth for UI.  |
+| `githubToken`     | `string?` | GitHub PAT loaded from localStorage.         |
+| `editingId`       | `string?` | ID of recipe currently being edited in form. |
+| `syncInProgress`  | `boolean` | Lock to prevent concurrent sync calls.       |
+| `deferredPrompt`  | `Event?`  | PWA install prompt event.                    |
+| `isOnline`        | `boolean` | Tracks `navigator.onLine`.                   |
+
+Persistence layers:
+- **localStorage** — Stores recipes, token, theme, and `recipes_last_updated` timestamp.
+- **GitHub Gist** — Remote source. Synced on app load, after every CRUD operation, and on demand.
+
+## Data Flow
+
+```
+User Action → CRUD Functions → localStorage (immediate)
+                              → syncWithGist() (async, background)
+```
+
+### Sync Protocol (Last-Write-Wins)
+
+```
+syncWithGist()
+  │
+  ├─ Fetch gist → parse remote recipes + lastUpdated
+  │
+  ├─ If local recipes is empty AND remote has recipes:
+  │     Load remote → save locally → render
+  │
+  ├─ Compare timestamps:
+  │   ├─ remote > local → Remote wins: overwrite local
+  │   └─ local > remote → Local wins: push to gist
+  │
+  └─ On auth failure → show token card
+```
+
+Sync triggers:
+- App init (if token is saved)
+- After add/edit/delete recipe
+- Manually via "Sync Now" button
+- When browser goes from offline → online
+
+## Module Responsibilities
+
+### `js/app.js`
+
+Everything currently lives here. Key sections:
+
+| Lines    | Section                    |
+|----------|----------------------------|
+| 1–6      | Gist configuration         |
+| 8–44     | Global state + DOM refs    |
+| 48–51    | Servings calculation       |
+| 55–98    | Token management           |
+| 102–160  | GitHub Gist API calls      |
+| 164–268  | Sync logic                 |
+| 273–338  | Recipe CRUD                |
+| 342–391  | Form handling              |
+| 395–478  | Recipe rendering + search  |
+| 483–548  | Recipe detail modal        |
+| 553–576  | Dark mode toggle           |
+| 580–597  | Online/offline status      |
+| 601–721  | Init, event listeners, SW  |
+
+### `css/style.css`
+
+- CSS custom properties for theming (light/dark via `[data-theme="dark"]`)
+- Card-based layout with gradient background
+- Responsive design (max-width: 800px container)
+- Modal overlay pattern, form styles, recipe cards
+
+### `service-worker.js`
+
+- Cache strategy: Cache-first for app shell (HTML, CSS, JS, icons, manifest)
+- GitHub API requests (`api.github.com`) bypass cache (not intercepted)
+- Old caches cleaned on activate
+- `skipWaiting` triggered on install and via message from client
+
+### `manifest.json`
+
+- App name, icons (192×192, 512×512, `any maskable`)
+- Display: `standalone`, theme color: `#e74c3c`
+- Categories: food, lifestyle, productivity
+
+### Supporting Files
+
+| File                     | Purpose                                             |
+|--------------------------|-----------------------------------------------------|
+| `recipes-schema-org.json`| Source recipes in schema.org `Recipe` format        |
+| `convert-recipes.py`     | Converts schema.org → app format (`example-recipes.json`) |
+| `example-recipes.json`   | Output of conversion. Ready to seed a gist.        |
+
+## External Dependencies
+
+- **GitHub Gist API** (`api.github.com`): Requires personal access token with `gist` scope.
+  - `GET /gists/{id}` — fetch gist
+  - `PATCH /gists/{id}` — update gist file content
+- No NPM dependencies, no build step.
+
+## Key Design Decisions
+
+1. **No framework.** Vanilla JS. DOM API directly. This minimizes tooling for an AI to reason about.
+2. **Simple conflict resolution.** Last-write-wins avoids merge UI complexity.
+3. **Token in localStorage.** Convenience over security. Token is scoped to gists only.
+4. **CRUD is async-safe.** localStorage writes are synchronous (safe); gist syncs are fire-and-forget with error logging.
+5. **Single source of truth.** Both localStorage and gist store the full recipe list, not diffs.
