@@ -4,36 +4,40 @@ A Progressive Web App for managing recipes with GitHub Gist as a backend for mul
 
 ## Features
 
-- **Offline Support** - Service worker caches app shell for offline use
-- **Installable** - Can be installed as a standalone app on mobile/desktop
-- **Responsive Design** - Works on all screen sizes
-- **Modern UI** - Clean, gradient background with card-based layout
-- **Network Status** - Shows online/offline status indicator
-- **GitHub Gist Backend** - Sync recipes across multiple devices
-- **Last-Write-Wins** - Simple conflict resolution for multi-device editing
-- **Dark Mode** - Toggle between light and dark themes
-- **Search** - Search recipes by name and ingredients
+- **Offline Support** — Service worker caches app shell for offline use
+- **Installable** — Can be installed as a standalone app on mobile/desktop
+- **Responsive Design** — Works on all screen sizes
+- **Modern UI** — Clean, gradient background with card-based layout
+- **Network Status** — Shows online/offline status indicator
+- **GitHub Gist Backend** — Sync recipes across multiple devices
+- **Last-Write-Wins** — Simple conflict resolution for multi-device editing
+- **Dark Mode** — Toggle between light and dark themes
+- **Search** — Search recipes by name and ingredients
+- **Recipe Details** — View recipes with ingredients, instructions, and notes in a modal
+- **Servings Calculation** — Auto-calculates servings based on total calories (~600 cal/serving)
 
 ## File Structure
 
 ```
 PWA-with-gist/
-├── index.html          # Main HTML entry point
-├── manifest.json       # PWA manifest (name, icons, display)
-├── service-worker.js   # Handles caching & offline support
+├── index.html               # Main HTML entry point
+├── manifest.json            # PWA manifest (name, icons, display)
+├── service-worker.js        # Handles caching & offline support
+├── icon-192x192.png         # PWA icon (192×192)
+├── icon-512x512.png         # PWA icon (512×512)
 ├── css/
-│   └── style.css      # App styles
+│   └── style.css            # App styles (light/dark theme)
 ├── js/
-│   └── app.js         # App logic with GitHub Gist integration
-└── README.md          # This file
+│   └── app.js               # App logic with GitHub Gist integration
+├── recipes-schema-org.json   # Raw recipes in schema.org format
+├── example-recipes.json      # Converted recipes in app format
+├── convert-recipes.py        # One-shot conversion script
+└── README.md                 # This file
 ```
 
 ## Setup Instructions
 
-### 1. Add Icons
-Create `icon-192x192.png` and `icon-512x512.png` in the root directory (required for installability).
-
-### 2. Create GitHub Personal Access Token
+### 1. Create GitHub Personal Access Token
 
 To use the Gist sync feature, you need a GitHub Personal Access Token:
 
@@ -45,7 +49,7 @@ To use the Gist sync feature, you need a GitHub Personal Access Token:
 6. Click **Generate token**
 7. **Copy the generated token immediately** (you won't see it again!)
 
-### 3. Serve the App
+### 2. Serve the App
 
 Use a local server (required for service workers):
 
@@ -60,16 +64,16 @@ npx serve
 php -S localhost:8000
 ```
 
-### 4. Open in Browser
+### 3. Open in Browser
 
 Visit `http://localhost:8000`
 
-### 5. Configure the App
+### 4. Configure the App
 
 1. When you first open the app, you'll see a token configuration card
 2. Paste your GitHub Personal Access Token
 3. Click **Save Token**
-4. The app will automatically seed the gist with 2 example recipes
+4. The app will sync with the gist and load any existing recipes
 
 ## Multi-Device Sync
 
