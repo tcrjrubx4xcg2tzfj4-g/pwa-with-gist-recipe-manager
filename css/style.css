@@ -11,9 +11,7 @@
     --secondary-color: #2c3e50;
     --accent-color: #f39c12;
     --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
     --success-color: #2ecc71;
-    --warning-color: #f39c12;
     --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --card-bg: white;
     --text-color: #2c3e50;
@@ -28,7 +26,6 @@
     --primary-dark: #c0392b;
     --secondary-color: #ecf0f1;
     --light-color: #2c3e50;
-    --dark-color: #ecf0f1;
     --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     --card-bg: #2c3e50;
     --text-color: #ecf0f1;
@@ -366,7 +363,8 @@ textarea {
 
 .recipe-card-meta {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
     margin-bottom: 0.75rem;
     font-size: 0.9rem;
     color: var(--text-muted);
@@ -376,6 +374,9 @@ textarea {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .recipe-card-ingredients {
@@ -516,26 +517,13 @@ textarea {
     color: var(--text-muted);
 }
 
-/* Install Button */
+/* Install Button — builds on .btn.btn-primary */
 .install-btn {
     display: block;
     width: 100%;
     padding: 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 8px;
     font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
     margin-top: 1rem;
-}
-
-.install-btn:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .install-btn:active {
@@ -600,15 +588,8 @@ footer {
 }
 
 #token-card .hint {
-    display: block;
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-#token-card small.hint {
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
 }
 
 .error-message {
@@ -648,18 +629,7 @@ footer {
 }
 
 #sync-now-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-    background-color: #95a5a6;
-    color: white;
-    border: none;
     border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#sync-now-btn:hover {
-    background-color: #7f8c8d;
 }
 
 /* Hint Text */
@@ -668,4 +638,16 @@ footer {
     margin-top: 0.25rem;
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+/* Token card uses slightly larger hint text */
+#token-card .hint {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Small hints within token card keep the base sizing */
+#token-card small.hint {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
 }

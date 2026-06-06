@@ -103,25 +103,23 @@ Sync triggers:
 
 ## Module Responsibilities
 
-### `js/app.js`
+### `js/` (split across 7 files)
 
-Everything currently lives here. Key sections:
+The single `js/app.js` was split into 7 files, keeping vanilla JS with global scope — no bundler needed. All files load before `DOMContentLoaded` fires, so mutual references across files are safe.
 
-| Lines    | Section                    |
-|----------|----------------------------|
-| 1–6      | Gist configuration         |
-| 8–44     | Global state + DOM refs    |
-| 48–51    | Servings calculation       |
-| 55–98    | Token management           |
-| 102–160  | GitHub Gist API calls      |
-| 164–268  | Sync logic                 |
-| 273–338  | Recipe CRUD                |
-| 342–391  | Form handling              |
-| 395–478  | Recipe rendering + search  |
-| 483–548  | Recipe detail modal        |
-| 553–576  | Dark mode toggle           |
-| 580–597  | Online/offline status      |
-| 601–721  | Init, event listeners, SW  |
+| File            | Key exports (globals)                                           |
+|-----------------|----------------------------------------------------------------|
+| `utils.js`      | `calculateServings()`, `generateId()`, `escapeHtml()`          |
+| `state.js`      | `GIST_CONFIG`, global state variables, DOM refs, token management, localStorage helpers |
+| `gist-api.js`   | `fetchGist()`, `updateGist()`                                   |
+| `sync.js`       | `syncWithGist()` (last-write-wins protocol)                     |
+| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal, theme, online/offline status |
+| `recipes.js`    | `addRecipe()`, `updateRecipe()`, `deleteRecipe()`, `getRecipeById()`, form handling |
+| `app.js`        | `initApp()`, event listeners, service worker registration, install prompt |
+
+**Load order (dependency order):** `utils.js` → `state.js` → `gist-api.js` → `sync.js` → `ui.js` → `recipes.js` → `app.js`
+
+Each file grabs its own DOM refs. Functions reference each other via the global scope.
 
 ### `css/style.css`
 
