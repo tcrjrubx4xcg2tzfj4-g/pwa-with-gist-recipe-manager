@@ -52,6 +52,8 @@ const ingredientsInput = document.getElementById("recipe-ingredients");
 const instructionsInput = document.getElementById("recipe-instructions");
 const notesInput = document.getElementById("recipe-notes");
 const saveBtn = document.getElementById("save-btn");
+const formToggleBtn = document.getElementById("form-toggle-btn");
+const collapseIndicator = document.getElementById("collapse-indicator");
 const recipeListEl = document.getElementById("recipe-list");
 const recipeCountEl = document.getElementById("recipe-count");
 const searchInput = document.getElementById("search-input");
@@ -62,6 +64,15 @@ const emptyState = document.getElementById("empty-state");
 const syncStatus = document.getElementById("sync-status");
 const syncText = document.getElementById("sync-text");
 const syncNowBtn = document.getElementById("sync-now-btn");
+
+// ==================== Collapsible Form ====================
+
+function toggleForm(expand) {
+  const shouldExpand =
+    expand !== undefined ? expand : formCard.classList.contains("collapsed");
+  formCard.classList.toggle("collapsed", !shouldExpand);
+  formToggleBtn.setAttribute("aria-expanded", shouldExpand);
+}
 
 // ==================== Servings Calculation ====================
 
@@ -366,6 +377,7 @@ function resetForm() {
   formTitle.textContent = "📝 Add New Recipe";
   saveBtn.textContent = "💾 Save Recipe";
   formCard.scrollIntoView({ behavior: "smooth" });
+  toggleForm(true);
 }
 
 function populateForm(recipe) {
@@ -380,6 +392,7 @@ function populateForm(recipe) {
   formTitle.textContent = "✏️ Edit Recipe";
   saveBtn.textContent = "💾 Update Recipe";
   formCard.scrollIntoView({ behavior: "smooth" });
+  toggleForm(true);
 }
 
 function handleFormSubmit(e) {
@@ -408,6 +421,7 @@ function handleFormSubmit(e) {
 
   resetForm();
   renderRecipes();
+  toggleForm(false);
 }
 
 // ==================== Recipe Rendering ====================
@@ -419,7 +433,10 @@ function getFilteredRecipes() {
     const matchesSearch =
       !searchTerm ||
       recipe.name.toLowerCase().includes(searchTerm) ||
-      recipe.ingredients && recipe.ingredients.some((ing) => ing.toLowerCase().includes(searchTerm));
+      (recipe.ingredients &&
+        recipe.ingredients.some((ing) =>
+          ing.toLowerCase().includes(searchTerm),
+        ));
     return matchesSearch;
   });
 }
@@ -441,9 +458,13 @@ function createRecipeCard(recipe) {
             ${recipe.source ? `<span>📖 ${escapeHtml(recipe.source)}</span>` : ""}
             <span>📅 ${new Date(recipe.createdAt).toLocaleDateString()}</span>
         </div>
-        ${recipe.ingredients && recipe.ingredients.length > 0 ? `<div class="recipe-card-ingredients">
+        ${
+          recipe.ingredients && recipe.ingredients.length > 0
+            ? `<div class="recipe-card-ingredients">
             <strong>Ingredients:</strong> ${escapeHtml(ingredientsPreview)}${hasMoreIngredients ? "..." : ""}
-        </div>` : ""}
+        </div>`
+            : ""
+        }
         <div class="recipe-card-actions">
             <button class="btn btn-secondary btn-small" data-action="view" data-id="${recipe.id}">👁️ View</button>
             <button class="btn btn-secondary btn-small" data-action="edit" data-id="${recipe.id}">✏️ Edit</button>
@@ -512,22 +533,30 @@ function showRecipeModal(id) {
             ${recipe.calories ? `<span>🔥 ${recipe.calories} calories</span> <span>👥 ${calculateServings(recipe.calories)} servings</span>` : ""}
             ${recipe.source ? `<span>📖 Source: ${escapeHtml(recipe.source)}</span>` : ""}
         </div>
-        ${recipe.ingredients && recipe.ingredients.length > 0 ? `
+        ${
+          recipe.ingredients && recipe.ingredients.length > 0
+            ? `
         <div class="modal-section">
             <h3>📋 Ingredients</h3>
             <ul>
                 ${recipe.ingredients.map((ing) => `<li>${escapeHtml(ing)}</li>`).join("")}
             </ul>
         </div>
-        ` : ""}
-        ${recipe.instructions && recipe.instructions.length > 0 ? `
+        `
+            : ""
+        }
+        ${
+          recipe.instructions && recipe.instructions.length > 0
+            ? `
         <div class="modal-section">
             <h3>📝 Instructions</h3>
             <ol>
                 ${recipe.instructions.map((inst) => `<li>${escapeHtml(inst)}</li>`).join("")}
             </ol>
         </div>
-        ` : ""}
+        `
+            : ""
+        }
         ${
           recipe.notes && recipe.notes.length > 0
             ? `
@@ -651,6 +680,15 @@ function setupEventListeners() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !modalOverlay.hidden) {
       hideModal();
+    }
+  });
+
+  // Toggle form collapse
+  formToggleBtn.addEventListener("click", () => toggleForm());
+  formToggleBtn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleForm();
     }
   });
 }

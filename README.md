@@ -105,3 +105,25 @@ This app uses a GitHub Gist as a backend for syncing recipes across devices:
 **Sync Not Working**: Check your internet connection and verify the token is saved correctly.
 
 **App Not Installing**: Ensure you're serving the app via a local server (not opening the HTML file directly).
+
+
+Plan for the next session:
+
+Split js/app.js (740 lines) into 7 files, keeping vanilla JS with global scope — no bundler needed.
+
+     ╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+     │ js/                                                                                                                                  │
+     │ ├── utils.js       # calculateServings, generateId, escapeHtml                                                                       │
+     │ ├── state.js       # Config, global variables, token mgmt, localStorage helpers                                                      │
+     │ ├── gist-api.js    # fetchGist, updateGist                                                                                           │
+     │ ├── ui.js          # Rendering, modal, theme, online status                                                                          │
+     │ ├── sync.js        # Sync logic (last-write-wins)                                                                                    │
+     │ ├── recipes.js     # CRUD operations, form handling                                                                                  │
+     │ └── app.js         # Entry point: init, event listeners, wiring                                                                      │
+     ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+   Changes also needed:
+     • index.html — replace one <script> with seven (in dependency order)
+     • service-worker.js — cache all JS files instead of just js/app.js
+     • ARCHITECTURE.md — update module section
+   Each file grabs its own DOM refs (no cross-file DOM dependencies). Functions reference each other via the global scope — all files load
+   before DOMContentLoaded fires, so mutual references are safe.
