@@ -16,25 +16,6 @@ A Progressive Web App for managing recipes with GitHub Gist as a backend for mul
 - **Recipe Details** — View recipes with ingredients, instructions, and notes in a modal
 - **Servings Calculation** — Auto-calculates servings based on total calories (~600 cal/serving)
 
-## File Structure
-
-```
-PWA-with-gist/
-├── index.html               # Main HTML entry point
-├── manifest.json            # PWA manifest (name, icons, display)
-├── service-worker.js        # Handles caching & offline support
-├── icon-192x192.png         # PWA icon (192×192)
-├── icon-512x512.png         # PWA icon (512×512)
-├── css/
-│   └── style.css            # App styles (light/dark theme)
-├── js/
-│   └── app.js               # App logic with GitHub Gist integration
-├── recipes-schema-org.json   # Raw recipes in schema.org format
-├── example-recipes.json      # Converted recipes in app format
-├── convert-recipes.py        # One-shot conversion script
-└── README.md                 # This file
-```
-
 ## Setup Instructions
 
 ### 1. Create GitHub Personal Access Token
@@ -56,12 +37,6 @@ Use a local server (required for service workers):
 ```bash
 # Python
 python3 -m http.server 8000
-
-# or Node.js
-npx serve
-
-# or PHP
-php -S localhost:8000
 ```
 
 ### 3. Open in Browser
@@ -74,21 +49,6 @@ Visit `http://localhost:8000`
 2. Paste your GitHub Personal Access Token
 3. Click **Save Token**
 4. The app will sync with the gist and load any existing recipes
-
-## Multi-Device Sync
-
-This app uses a GitHub Gist as a backend for syncing recipes across devices:
-
-- **Gist ID**: `f4a344cb21cd8443b956360a1178dd9d`
-- **Account**: `tcrjrubx4xcg2tzfj4-g`
-- **Conflict Resolution**: Last-Write-Wins (based on timestamp)
-
-### How Sync Works
-
-1. When you add, edit, or delete a recipe, the app saves locally first
-2. It then syncs with the GitHub Gist in the background
-3. When you open the app or click **Sync Now**, it pulls the latest from the gist
-4. If there's a conflict (same recipe modified on multiple devices), the most recently updated version wins
 
 ## Notes
 
