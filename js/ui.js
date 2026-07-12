@@ -244,7 +244,6 @@ function releaseWakeLock() {
   if (wakeLock) {
     wakeLock.release().then(() => {
       wakeLock = null;
-      console.log('[App] Screen wake lock released');
     }).catch((e) => {
       console.error('[App] Failed to release screen wake lock:', e);
     });

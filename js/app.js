@@ -90,16 +90,15 @@ function setupServiceWorker() {
               }
             });
           });
-        });
 
-        // When a new service worker takes over, reload the page immediately
-        navigator.serviceWorker.addEventListener("controllerchange", () => {
-          window.location.reload();
+          // When a new service worker takes over, reload the page immediately
+          navigator.serviceWorker.addEventListener("controllerchange", () => {
+            window.location.reload();
+          });
+        })
+        .catch((error) => {
+          console.log("[App] ServiceWorker registration failed:", error);
         });
-      })
-      .catch((error) => {
-        console.log("[App] ServiceWorker registration failed:", error);
-      });
     });
   }
 }
