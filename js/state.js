@@ -30,6 +30,7 @@ let recipes = [];
 let editingId = null;
 let syncInProgress = false;
 let githubToken = null;
+let wakeLock = null;
 
 // DOM Elements
 const statusEl = document.getElementById("status");

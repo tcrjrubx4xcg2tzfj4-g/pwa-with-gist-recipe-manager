@@ -174,10 +174,12 @@ function showRecipeModal(id) {
   });
 
   modalOverlay.hidden = false;
+  requestWakeLock();
 }
 
 function hideModal() {
   modalOverlay.hidden = true;
+  releaseWakeLock();
 }
 
 // ==================== Theme Management ====================
@@ -216,5 +218,35 @@ function updateOnlineStatus() {
   } else {
     statusEl.textContent = "🔴 Offline";
     statusEl.className = "status-offline";
+  }
+}
+
+// ==================== Screen Wake Lock ====================
+
+async function requestWakeLock() {
+  if (!('wakeLock' in navigator)) {
+    console.log('[App] Screen Wake Lock API not supported');
+    return;
+  }
+
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('[App] Screen wake lock released');
+    });
+    console.log('[App] Screen wake lock acquired');
+  } catch (e) {
+    console.error('[App] Failed to acquire screen wake lock:', e);
+  }
+}
+
+function releaseWakeLock() {
+  if (wakeLock) {
+    wakeLock.release().then(() => {
+      wakeLock = null;
+      console.log('[App] Screen wake lock released');
+    }).catch((e) => {
+      console.error('[App] Failed to release screen wake lock:', e);
+    });
   }
 }

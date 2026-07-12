@@ -44,6 +44,13 @@ function setupEventListeners() {
       toggleForm();
     }
   });
+
+  // Re-acquire wake lock if user returns to page while modal is open
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && !modalOverlay.hidden && wakeLock === null) {
+      requestWakeLock();
+    }
+  });
 }
 
 function setupNetworkListeners() {
