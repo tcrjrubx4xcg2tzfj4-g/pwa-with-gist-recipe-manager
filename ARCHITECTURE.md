@@ -135,6 +135,12 @@ Each file grabs its own DOM refs. Functions reference each other via the global 
 - Old caches cleaned on activate
 - `skipWaiting` triggered on install and via message from client
 
+> ⚠️ **Agent instruction:** Whenever you change any JS, CSS, HTML, icon, or manifest file,
+> **bump the `CACHE_NAME` constant** (e.g. `recipe-manager-v4` → `recipe-manager-v5`)
+> so that installed PWA users receive the updated files on their next visit.
+> Without this bump, the old service worker continues serving the previous cached
+> version and the change has no effect for returning users.
+
 ### `manifest.json`
 
 - App name, icons (192×192, 512×512, `any maskable`)
