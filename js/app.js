@@ -79,10 +79,27 @@ function setupServiceWorker() {
             "[App] ServiceWorker registration successful:",
             registration,
           );
-        })
-        .catch((error) => {
-          console.log("[App] ServiceWorker registration failed:", error);
+
+          // Check for updates to the service worker
+          registration.addEventListener("updatefound", () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener("statechange", () => {
+              if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                // New version available — tell the old SW to skip waiting
+                newWorker.postMessage({ action: "skipWaiting" });
+              }
+            });
+          });
         });
+
+        // When a new service worker takes over, reload the page immediately
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          window.location.reload();
+        });
+      })
+      .catch((error) => {
+        console.log("[App] ServiceWorker registration failed:", error);
+      });
     });
   }
 }
