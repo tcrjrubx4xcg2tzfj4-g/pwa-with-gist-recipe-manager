@@ -471,6 +471,7 @@ textarea {
     width: 100%;
     position: relative;
     color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .modal-close {
@@ -543,6 +544,57 @@ textarea {
     border-radius: 8px;
     font-style: italic;
     color: var(--text-muted);
+}
+
+/* Battery Save Mode for Modal */
+.modal.modal-battery-save {
+    background: #000000;
+    color: #ffffff;
+}
+
+.modal-battery-save h2,
+.modal-battery-save h3 {
+    color: #ffffff;
+}
+
+.modal-battery-save .modal-meta span,
+.modal-battery-save .modal-notes {
+    background: #222;
+    color: #ddd;
+}
+
+.modal-battery-save .hint {
+    color: #888;
+}
+
+.modal-battery-save .modal-close {
+    color: #fff;
+}
+
+.modal-battery-save .modal-close:hover {
+    background: #333;
+}
+
+.modal-battery-save a {
+    color: #66b3ff;
+}
+
+.modal-battery-save .btn-secondary {
+    background: #333;
+    color: #fff;
+}
+
+.modal-battery-save .btn-secondary:hover {
+    background: #555;
+}
+
+.modal-battery-save .btn-danger {
+    background: #6b0000;
+    color: #fff;
+}
+
+.modal-battery-save .btn-danger:hover {
+    background: #8b0000;
 }
 
 /* Install Button — builds on .btn.btn-primary */

@@ -188,7 +188,9 @@ function showRecipeModal(id) {
   });
 
   modalOverlay.hidden = false;
-  requestWakeLock();
+
+  // Start battery save timer (inactivity → pure black + wake lock)
+  resetInactivityTimer();
 }
 
 function toggleShuffle() {
@@ -211,7 +213,8 @@ function updateShuffleBtn() {
 
 function hideModal() {
   modalOverlay.hidden = true;
-  releaseWakeLock();
+  clearTimeout(inactivityTimer);
+  exitBatterySaveMode();
 }
 
 // ==================== Theme Management ====================
@@ -281,3 +284,54 @@ function releaseWakeLock() {
     });
   }
 }
+
+// ==================== Battery Save Mode ====================
+
+const INACTIVITY_TIMEOUT = 12000; // 12 seconds
+let inactivityTimer = null;
+let batterySaveActive = false;
+
+function handleModalInteraction() {
+  if (modalOverlay.hidden) return;
+
+  if (batterySaveActive) {
+    exitBatterySaveMode();
+  }
+
+  resetInactivityTimer();
+}
+
+function resetInactivityTimer() {
+  if (inactivityTimer) {
+    clearTimeout(inactivityTimer);
+  }
+  inactivityTimer = setTimeout(enterBatterySaveMode, INACTIVITY_TIMEOUT);
+}
+
+function enterBatterySaveMode() {
+  if (batterySaveActive || modalOverlay.hidden) return;
+  batterySaveActive = true;
+  document.querySelector('.modal').classList.add('modal-battery-save');
+  requestWakeLock();
+  console.log('[App] Battery save mode activated');
+}
+
+function exitBatterySaveMode() {
+  if (!batterySaveActive) return;
+  batterySaveActive = false;
+  document.querySelector('.modal').classList.remove('modal-battery-save');
+  releaseWakeLock();
+  console.log('[App] Battery save mode deactivated');
+}
+
+function setupBatterySaveListeners() {
+  const modal = document.querySelector('.modal');
+  if (!modal) return;
+  modal.addEventListener('pointerdown', handleModalInteraction);
+  modal.addEventListener('touchstart', handleModalInteraction);
+  modal.addEventListener('scroll', handleModalInteraction);
+  console.log('[App] Battery save listeners attached');
+}
+
+// Initialize battery save listeners when the module loads
+document.addEventListener('DOMContentLoaded', setupBatterySaveListeners);
