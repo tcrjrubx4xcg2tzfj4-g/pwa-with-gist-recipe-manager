@@ -199,11 +199,11 @@ function toggleShuffle() {
 
 function updateShuffleBtn() {
   if (shuffleActive) {
-    shuffleBtn.textContent = "📋 Sorted";
+    shuffleBtn.textContent = "📋";
     shuffleBtn.classList.add("active");
     shuffleBtn.title = "Restore original order";
   } else {
-    shuffleBtn.textContent = "🔀 Shuffle";
+    shuffleBtn.textContent = "🔀";
     shuffleBtn.classList.remove("active");
     shuffleBtn.title = "Shuffle recipe order";
   }

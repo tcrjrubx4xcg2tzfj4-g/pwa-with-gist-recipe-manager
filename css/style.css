@@ -326,17 +326,31 @@ textarea {
 }
 
 #shuffle-btn {
-    white-space: nowrap;
+    font-size: 1.2rem;
+    padding: 0.5rem 0.6rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
     transition: all 0.3s ease;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+#shuffle-btn:hover {
+    border-color: var(--primary-color);
 }
 
 #shuffle-btn.active {
     background-color: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
 }
 
 #shuffle-btn.active:hover {
     background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
 }
 
 /* Recipe List */
@@ -564,10 +578,6 @@ footer {
 
     .form-row {
         grid-template-columns: 1fr;
-    }
-
-    .search-bar {
-        flex-direction: column;
     }
 
     .recipe-card-header {
