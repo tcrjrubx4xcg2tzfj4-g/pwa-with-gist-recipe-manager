@@ -325,6 +325,20 @@ textarea {
     cursor: pointer;
 }
 
+#shuffle-btn {
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+#shuffle-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#shuffle-btn.active:hover {
+    background-color: var(--primary-dark);
+}
+
 /* Recipe List */
 .recipe-list {
     display: flex;

@@ -31,6 +31,7 @@ let editingId = null;
 let syncInProgress = false;
 let githubToken = null;
 let wakeLock = null;
+let shuffleActive = false;
 
 // DOM Elements
 const statusEl = document.getElementById("status");
@@ -59,6 +60,7 @@ const modalOverlay = document.getElementById("modal-overlay");
 const modalContent = document.getElementById("modal-content");
 const modalClose = document.getElementById("modal-close");
 const emptyState = document.getElementById("empty-state");
+const shuffleBtn = document.getElementById("shuffle-btn");
 const syncStatus = document.getElementById("sync-status");
 const syncText = document.getElementById("sync-text");
 const syncNowBtn = document.getElementById("sync-now-btn");

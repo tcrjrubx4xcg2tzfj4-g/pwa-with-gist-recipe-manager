@@ -9,10 +9,19 @@ function toggleForm(expand) {
 
 // ==================== Recipe Rendering ====================
 
+function shuffleArray(arr) {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function getFilteredRecipes() {
   const searchTerm = searchInput.value.toLowerCase();
 
-  return recipes.filter((recipe) => {
+  const filtered = recipes.filter((recipe) => {
     const matchesSearch =
       !searchTerm ||
       recipe.name.toLowerCase().includes(searchTerm) ||
@@ -22,6 +31,11 @@ function getFilteredRecipes() {
         ));
     return matchesSearch;
   });
+
+  if (shuffleActive) {
+    return shuffleArray(filtered);
+  }
+  return filtered;
 }
 
 function createRecipeCard(recipe) {
@@ -175,6 +189,24 @@ function showRecipeModal(id) {
 
   modalOverlay.hidden = false;
   requestWakeLock();
+}
+
+function toggleShuffle() {
+  shuffleActive = !shuffleActive;
+  updateShuffleBtn();
+  renderRecipes();
+}
+
+function updateShuffleBtn() {
+  if (shuffleActive) {
+    shuffleBtn.textContent = "📋 Sorted";
+    shuffleBtn.classList.add("active");
+    shuffleBtn.title = "Restore original order";
+  } else {
+    shuffleBtn.textContent = "🔀 Shuffle";
+    shuffleBtn.classList.remove("active");
+    shuffleBtn.title = "Shuffle recipe order";
+  }
 }
 
 function hideModal() {

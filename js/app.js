@@ -36,6 +36,9 @@ function setupEventListeners() {
     }
   });
 
+  // Shuffle button
+  shuffleBtn.addEventListener("click", toggleShuffle);
+
   // Toggle form collapse
   formToggleBtn.addEventListener("click", () => toggleForm());
   formToggleBtn.addEventListener("keydown", (e) => {
