@@ -41,8 +41,7 @@ Legacy format (flat array without wrapper object) is also handled on read.
 index.html
 ├── header              # "🍳 Recipe Manager" title
 ├── main
-│   ├── .status-bar     # Online/offline indicator + dark mode toggle
-│   ├── #token-card     # GitHub token input (hidden once configured)
+│   ├── #theme-toggle  # Dark mode toggle button     # GitHub token input (hidden once configured)
 │   ├── #form-card      # Add/edit recipe form
 │   ├── #sync-status    # Sync status text + "Sync Now" button
 │   ├── .card           # Recipe list section
@@ -65,7 +64,6 @@ All state is held in module-level variables in `js/app.js`:
 | `editingId`       | `string?` | ID of recipe currently being edited in form. |
 | `syncInProgress`  | `boolean` | Lock to prevent concurrent sync calls.       |
 | `deferredPrompt`  | `Event?`  | PWA install prompt event.                    |
-| `isOnline`        | `boolean` | Tracks `navigator.onLine`.                   |
 
 Persistence layers:
 - **localStorage** — Stores recipes, token, theme, and `recipes_last_updated` timestamp.
@@ -99,7 +97,6 @@ Sync triggers:
 - App init (if token is saved)
 - After add/edit/delete recipe
 - Manually via "Sync Now" button
-- When browser goes from offline → online
 
 ## Module Responsibilities
 
@@ -113,7 +110,7 @@ The single `js/app.js` was split into 7 files, keeping vanilla JS with global sc
 | `state.js`      | `GIST_CONFIG`, global state variables, DOM refs, token management, localStorage helpers |
 | `gist-api.js`   | `fetchGist()`, `updateGist()`                                   |
 | `sync.js`       | `syncWithGist()` (last-write-wins protocol)                     |
-| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal, theme, online/offline status |
+| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal, theme |
 | `recipes.js`    | `addRecipe()`, `updateRecipe()`, `deleteRecipe()`, `getRecipeById()`, form handling |
 | `app.js`        | `initApp()`, event listeners, service worker registration, install prompt |
 

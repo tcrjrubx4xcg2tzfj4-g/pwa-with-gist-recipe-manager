@@ -8,7 +8,6 @@ A Progressive Web App for managing recipes with GitHub Gist as a backend for mul
 - **Installable** — Can be installed as a standalone app on mobile/desktop
 - **Responsive Design** — Works on all screen sizes
 - **Modern UI** — Clean, gradient background with card-based layout
-- **Network Status** — Shows online/offline status indicator
 - **GitHub Gist Backend** — Sync recipes across multiple devices
 - **Last-Write-Wins** — Simple conflict resolution for multi-device editing
 - **Dark Mode** — Toggle between light and dark themes

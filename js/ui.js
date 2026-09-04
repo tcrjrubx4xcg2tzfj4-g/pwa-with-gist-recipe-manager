@@ -209,18 +209,6 @@ function toggleTheme() {
   }
 }
 
-// ==================== Online/Offline Status ====================
-
-function updateOnlineStatus() {
-  if (navigator.onLine) {
-    statusEl.textContent = "🟢 Online";
-    statusEl.className = "status-online";
-  } else {
-    statusEl.textContent = "🔴 Offline";
-    statusEl.className = "status-offline";
-  }
-}
-
 // ==================== Screen Wake Lock ====================
 
 async function requestWakeLock() {

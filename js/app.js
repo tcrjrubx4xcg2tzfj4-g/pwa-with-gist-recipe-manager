@@ -56,22 +56,6 @@ function setupEventListeners() {
   });
 }
 
-function setupNetworkListeners() {
-  window.addEventListener("online", () => {
-    updateOnlineStatus();
-    console.log("[App] Back online");
-    // Try to sync when back online
-    if (githubToken) {
-      syncWithGist();
-    }
-  });
-
-  window.addEventListener("offline", () => {
-    updateOnlineStatus();
-    console.log("[App] Gone offline");
-  });
-}
-
 function setupServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
@@ -136,10 +120,8 @@ function initApp() {
   // Load local recipes first
   loadRecipesLocal();
   initTheme();
-  updateOnlineStatus();
   setupServiceWorker();
   setupInstallPrompt();
-  setupNetworkListeners();
   setupEventListeners();
 
   // Check if token is configured
