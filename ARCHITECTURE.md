@@ -141,6 +141,22 @@ Each file grabs its own DOM refs. Functions reference each other via the global 
 > Without this bump, the old service worker continues serving the previous cached
 > version and the change has no effect for returning users.
 
+## Ship / Release Workflow
+
+How changes get released (single-branch flow, no pull requests):
+
+1. **Bump `CACHE_NAME`** in `service-worker.js` if any static asset changed (see agent instruction above).
+2. **Commit** — `git add` the changed files, then `git commit`.
+3. **Push** — `git push origin master`; the remote serves the app directly from `master`.
+
+Notes for agents:
+
+- A **pre-commit hook** (`.git/hooks/pre-commit`) runs `node --check` on all staged `.js`
+  files and **aborts the commit on any syntax error**. It uses `node`, so the hook
+  fails if `node` is not installed. Fix errors and re-commit.
+- After pushing, verify the release with `git ls-remote origin` (HEAD should match
+  the local commit).
+
 ### `manifest.json`
 
 - App name, icons (192×192, 512×512, `any maskable`)
