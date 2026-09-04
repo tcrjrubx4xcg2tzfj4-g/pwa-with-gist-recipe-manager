@@ -43,49 +43,14 @@ function createRecipeCard(recipe) {
   card.className = "recipe-card";
   card.dataset.id = recipe.id;
 
-  const ingredientsPreview = (recipe.ingredients || []).slice(0, 3).join(", ");
-  const hasMoreIngredients = (recipe.ingredients || []).length > 3;
+  const portions = calculateServings(recipe.calories);
 
   card.innerHTML = `
         <div class="recipe-card-header">
             <h3 class="recipe-card-title">${escapeHtml(recipe.name)}</h3>
-        </div>
-        <div class="recipe-card-meta">
-            ${recipe.calories ? `<span>🔥 ${recipe.calories} cal</span> <span>👥 ${calculateServings(recipe.calories)} servings</span>` : ""}
-            ${recipe.source ? `<span>📖 ${escapeHtml(recipe.source)}</span>` : ""}
-            <span>📅 ${new Date(recipe.createdAt).toLocaleDateString()}</span>
-        </div>
-        ${
-          recipe.ingredients && recipe.ingredients.length > 0
-            ? `<div class="recipe-card-ingredients">
-            <strong>Ingredients:</strong> ${escapeHtml(ingredientsPreview)}${hasMoreIngredients ? "..." : ""}
-        </div>`
-            : ""
-        }
-        <div class="recipe-card-actions">
-            <button class="btn btn-secondary btn-small" data-action="view" data-id="${recipe.id}">👁️ View</button>
-            <button class="btn btn-secondary btn-small" data-action="edit" data-id="${recipe.id}">✏️ Edit</button>
-            <button class="btn btn-danger btn-small" data-action="delete" data-id="${recipe.id}">🗑️ Delete</button>
+            ${portions > 0 ? `<span class="recipe-card-portions">👥 ${portions} Portionen</span>` : ""}
         </div>
     `;
-
-  // Add click handlers for buttons
-  card.querySelectorAll("[data-action]").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const action = btn.dataset.action;
-      const id = btn.dataset.id;
-
-      if (action === "view") {
-        showRecipeModal(id);
-      } else if (action === "edit") {
-        const recipe = getRecipeById(id);
-        if (recipe) populateForm(recipe);
-      } else if (action === "delete") {
-        deleteRecipe(id);
-      }
-    });
-  });
 
   // Click card to view
   card.addEventListener("click", () => {
