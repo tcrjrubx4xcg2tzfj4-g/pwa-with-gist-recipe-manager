@@ -5,20 +5,55 @@ function setupEventListeners() {
   searchInput.addEventListener("input", renderRecipes);
   syncNowBtn.addEventListener("click", () => syncWithGist());
 
-  // Token save button
-  saveTokenBtn.addEventListener("click", () => {
-    const token = tokenInput.value.trim();
-    if (!token) {
-      showTokenError("Please enter a valid token");
-      return;
-    }
+  // Settings button
+  settingsBtn.addEventListener("click", () => {
+    showSettings();
+  });
 
-    hideTokenError();
-    if (saveToken(token)) {
-      hideTokenCard();
-      syncWithGist();
+  // Settings save button
+  settingsSaveBtn.addEventListener("click", () => {
+    const formData = readSettingsForm();
+
+    hideSettingsError();
+
+    // Save all settings
+    Object.keys(formData).forEach((key) => {
+      settings[key] = formData[key];
+    });
+
+    if (saveSettings()) {
+      hideSettings();
+      // If token is now set, trigger a sync
+      if (githubToken) {
+        syncWithGist();
+      }
+      renderRecipes();
     } else {
-      showTokenError("Failed to save token");
+      showSettingsError("Failed to save settings");
+    }
+  });
+
+  // Settings cancel button
+  settingsCancelBtn.addEventListener("click", () => {
+    hideSettings();
+  });
+
+  // Settings close button
+  settingsClose.addEventListener("click", () => {
+    hideSettings();
+  });
+
+  // Settings overlay click to close
+  settingsOverlay.addEventListener("click", (e) => {
+    if (e.target === settingsOverlay) {
+      hideSettings();
+    }
+  });
+
+  // ESC to close settings
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !settingsOverlay.hidden) {
+      hideSettings();
     }
   });
 
@@ -116,19 +151,17 @@ function setupInstallPrompt() {
 }
 
 function initApp() {
-  // Load local recipes first
+  // Load settings first (migrates old format if needed)
+  loadSettings();
+  // Load local recipes
   loadRecipesLocal();
   setupServiceWorker();
   setupInstallPrompt();
   setupEventListeners();
 
-  // Check if token is configured
-  if (loadToken()) {
-    hideTokenCard();
-    // Initial sync with gist
+  // If token is configured, sync with gist
+  if (githubToken) {
     syncWithGist();
-  } else {
-    showTokenCard();
   }
 
   renderRecipes();

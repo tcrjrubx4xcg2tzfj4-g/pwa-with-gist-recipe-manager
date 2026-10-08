@@ -63,10 +63,11 @@ async function syncWithGist() {
     renderRecipes();
   } catch (error) {
     console.error("[Sync] Error:", error);
-    syncText.textContent = `Sync failed: ${error.message}`;
 
     if (error.message.includes("Authentication failed")) {
-      showTokenCard();
+      syncText.textContent = "Authentication failed. Update your token in Settings.";
+    } else {
+      syncText.textContent = `Sync failed: ${error.message}`;
     }
   } finally {
     syncInProgress = false;

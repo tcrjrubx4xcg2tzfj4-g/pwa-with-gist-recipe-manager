@@ -1,5 +1,19 @@
 // ==================== Collapsible Form ====================
 
+// ==================== Settings Modal ====================
+
+function showSettings() {
+  populateSettingsForm();
+  hideSettingsError();
+  settingsOverlay.hidden = false;
+}
+
+function hideSettings() {
+  settingsOverlay.hidden = true;
+}
+
+// ==================== Collapsible Form ====================
+
 function toggleForm(expand) {
   const shouldExpand =
     expand !== undefined ? expand : formCard.classList.contains("collapsed");

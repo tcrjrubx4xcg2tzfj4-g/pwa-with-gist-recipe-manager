@@ -18,7 +18,66 @@
  * @property {Object}   files       - Gist file map (keyed by filename)
  */
 
-// App Configuration
+// ==================== Settings Defaults ====================
+
+const DEFAULT_SETTINGS = {
+  github_token: '',
+  // Future settings go here, e.g.:
+  // ai_api_key: '',
+  // ai_model: '',
+  // theme: 'dark',
+};
+
+let settings = {};
+
+// ==================== Settings Management ====================
+
+function loadSettings() {
+  try {
+    const stored = localStorage.getItem('settings');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      // Merge with defaults so new settings get defaults
+      settings = { ...DEFAULT_SETTINGS, ...parsed };
+    } else {
+      // Try to migrate old github_token
+      const oldToken = localStorage.getItem('github_token');
+      settings = { ...DEFAULT_SETTINGS };
+      if (oldToken) {
+        settings.github_token = oldToken;
+        localStorage.removeItem('github_token');
+      }
+    }
+  } catch (e) {
+    console.error('Error loading settings:', e);
+    settings = { ...DEFAULT_SETTINGS };
+  }
+  // Update the global githubToken
+  githubToken = settings.github_token || null;
+}
+
+function saveSettings() {
+  try {
+    localStorage.setItem('settings', JSON.stringify(settings));
+    // Update the global githubToken
+    githubToken = settings.github_token || null;
+    return true;
+  } catch (e) {
+    console.error('Error saving settings:', e);
+    return false;
+  }
+}
+
+function getSetting(key) {
+  return settings[key];
+}
+
+function setSetting(key, value) {
+  settings[key] = value;
+}
+
+// ==================== App Configuration ====================
+
 const GIST_CONFIG = {
   id: "f4a344cb21cd8443b956360a1178dd9d",
   filename: "recipes.json",
@@ -35,10 +94,14 @@ let shuffleActive = false;
 
 // DOM Elements
 const installBtn = document.getElementById("install-btn");
-const tokenCard = document.getElementById("token-card");
-const tokenInput = document.getElementById("github-token");
-const saveTokenBtn = document.getElementById("save-token-btn");
-const tokenError = document.getElementById("token-error");
+const settingsBtn = document.getElementById("settings-btn");
+const settingsOverlay = document.getElementById("settings-overlay");
+const settingsClose = document.getElementById("settings-close");
+const settingsContent = document.getElementById("settings-content");
+const settingsTokenInput = document.getElementById("settings-github-token");
+const settingsSaveBtn = document.getElementById("settings-save-btn");
+const settingsCancelBtn = document.getElementById("settings-cancel-btn");
+const settingsError = document.getElementById("settings-error");
 const formCard = document.getElementById("form-card");
 const formTitle = document.getElementById("form-title");
 const recipeForm = document.getElementById("recipe-form");
@@ -63,54 +126,33 @@ const syncStatus = document.getElementById("sync-status");
 const syncText = document.getElementById("sync-text");
 const syncNowBtn = document.getElementById("sync-now-btn");
 
-// ==================== Token Management ====================
+// ==================== Settings UI Helpers ====================
 
-function loadToken() {
-  try {
-    const stored = localStorage.getItem("github_token");
-    if (stored) {
-      githubToken = stored;
-      return true;
-    }
-  } catch (e) {
-    console.error("Error loading token:", e);
-  }
-  return false;
+function showSettingsError(message) {
+  settingsError.textContent = message;
+  settingsError.hidden = false;
 }
 
-function saveToken(token) {
-  try {
-    localStorage.setItem("github_token", token);
-    githubToken = token;
-    return true;
-  } catch (e) {
-    console.error("Error saving token:", e);
-    return false;
-  }
+function hideSettingsError() {
+  settingsError.hidden = true;
 }
 
-function showTokenCard() {
-  tokenCard.hidden = false;
-  formCard.hidden = true;
-  syncStatus.hidden = true;
+function populateSettingsForm() {
+  settingsTokenInput.value = settings.github_token || '';
 }
 
-function hideTokenCard() {
-  tokenCard.hidden = true;
-  formCard.hidden = false;
-  syncStatus.hidden = false;
-}
-
-function showTokenError(message) {
-  tokenError.textContent = message;
-  tokenError.hidden = false;
-}
-
-function hideTokenError() {
-  tokenError.hidden = true;
+function readSettingsForm() {
+  return {
+    github_token: settingsTokenInput.value.trim(),
+  };
 }
 
 // ==================== Local Storage Helpers ====================
+
+// The old loadToken/saveToken/showTokenCard/hideTokenCard functions have been
+// replaced by the settings-based approach above.
+// All settings (including github_token) are now managed through loadSettings()
+// and saveSettings(), stored as a single 'settings' JSON object in localStorage.
 
 function loadRecipesLocal() {
   try {

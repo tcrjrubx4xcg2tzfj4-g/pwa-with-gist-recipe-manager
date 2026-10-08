@@ -22,40 +22,11 @@
             <header>
                 <h1>🍳 Recipe Manager</h1>
                 <p class="subtitle">Your personal recipe collection</p>
+                <button id="settings-btn" class="btn settings-icon-btn" title="Settings">⚙️</button>
             </header>
 
             <main>
-                <!-- Token Configuration (shown when not configured) -->
-                <div class="card form-card" id="token-card" hidden>
-                    <h2>🔑 GitHub Authentication</h2>
-                    <p class="hint">
-                        Enter your GitHub Personal Access Token to sync recipes
-                        with the gist backend.
-                    </p>
-                    <div class="form-group">
-                        <label for="github-token">GitHub Token</label>
-                        <input
-                            type="password"
-                            id="github-token"
-                            placeholder="Enter your GitHub token"
-                        />
-                        <small class="hint"
-                            >Create a token at: GitHub Settings → Developer
-                            settings → Personal access tokens (with 'gist'
-                            scope)</small
-                        >
-                    </div>
-                    <div class="form-actions">
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            id="save-token-btn"
-                        >
-                            💾 Save Token
-                        </button>
-                    </div>
-                    <div class="error-message" id="token-error" hidden></div>
-                </div>
+
 
                 <!-- Add/Edit Recipe Form -->
                 <div class="card form-card collapsed" id="form-card">
@@ -222,6 +193,55 @@
             <div class="modal">
                 <button class="modal-close" id="modal-close">✕</button>
                 <div id="modal-content"></div>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div class="modal-overlay" id="settings-overlay" hidden>
+            <div class="modal">
+                <button class="modal-close" id="settings-close">✕</button>
+                <div id="settings-content">
+                    <h2>⚙️ Settings</h2>
+
+                    <div class="form-group">
+                        <label for="settings-github-token">GitHub Token</label>
+                        <input
+                            type="password"
+                            id="settings-github-token"
+                            placeholder="Enter your GitHub token (optional)"
+                        />
+                        <small class="hint"
+                            >Required for syncing with GitHub Gist. Leave empty
+                            to disable syncing. Create a token at: GitHub
+                            Settings → Developer settings → Personal access
+                            tokens (with 'gist' scope)</small
+                        >
+                    </div>
+
+                    <!-- Future settings can be added here -->
+
+                    <div class="form-actions">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="settings-save-btn"
+                        >
+                            💾 Save Settings
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="settings-cancel-btn"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                    <div
+                        class="error-message"
+                        id="settings-error"
+                        hidden
+                    ></div>
+                </div>
             </div>
         </div>
 
