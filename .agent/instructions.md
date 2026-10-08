@@ -26,7 +26,7 @@ You need to touch **5 places**:
 ## CSS Conventions
 
 - Use `:root` CSS custom properties, never hardcoded colors
-- Dark overrides under `[data-theme="dark"]`
+- Dark theme by default
 - Transitions: `0.3s ease` on background/shadow/text-color
 - Responsive breakpoints: 768px, 480px
 

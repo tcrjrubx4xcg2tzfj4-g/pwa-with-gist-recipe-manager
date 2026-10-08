@@ -35,7 +35,6 @@ let shuffleActive = false;
 
 // DOM Elements
 const installBtn = document.getElementById("install-btn");
-const themeToggleBtn = document.getElementById("theme-toggle");
 const tokenCard = document.getElementById("token-card");
 const tokenInput = document.getElementById("github-token");
 const saveTokenBtn = document.getElementById("save-token-btn");

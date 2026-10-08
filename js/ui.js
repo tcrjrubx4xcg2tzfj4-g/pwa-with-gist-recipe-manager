@@ -182,33 +182,6 @@ function hideModal() {
   exitBatterySaveMode();
 }
 
-// ==================== Theme Management ====================
-
-function initTheme() {
-  try {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      themeToggleBtn.textContent = "☀️";
-    }
-  } catch (e) {
-    console.error("Error loading theme:", e);
-  }
-}
-
-function toggleTheme() {
-  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-  if (isDark) {
-    document.documentElement.removeAttribute("data-theme");
-    themeToggleBtn.textContent = "🌙";
-    localStorage.setItem("theme", "light");
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-    themeToggleBtn.textContent = "☀️";
-    localStorage.setItem("theme", "dark");
-  }
-}
-
 // ==================== Screen Wake Lock ====================
 
 async function requestWakeLock() {

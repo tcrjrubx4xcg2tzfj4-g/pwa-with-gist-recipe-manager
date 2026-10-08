@@ -10,7 +10,6 @@ A Progressive Web App for managing recipes with GitHub Gist as a backend for mul
 - **Modern UI** — Clean, gradient background with card-based layout
 - **GitHub Gist Backend** — Sync recipes across multiple devices
 - **Last-Write-Wins** — Simple conflict resolution for multi-device editing
-- **Dark Mode** — Toggle between light and dark themes
 - **Search** — Search recipes by name and ingredients
 - **Recipe Details** — View recipes with ingredients, instructions, and notes in a modal
 - **Servings Calculation** — Auto-calculates servings based on total calories (~600 cal/serving)

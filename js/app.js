@@ -3,7 +3,6 @@
 function setupEventListeners() {
   recipeForm.addEventListener("submit", handleFormSubmit);
   searchInput.addEventListener("input", renderRecipes);
-  themeToggleBtn.addEventListener("click", toggleTheme);
   syncNowBtn.addEventListener("click", () => syncWithGist());
 
   // Token save button
@@ -119,7 +118,6 @@ function setupInstallPrompt() {
 function initApp() {
   // Load local recipes first
   loadRecipesLocal();
-  initTheme();
   setupServiceWorker();
   setupInstallPrompt();
   setupEventListeners();

@@ -41,7 +41,7 @@ Legacy format (flat array without wrapper object) is also handled on read.
 index.html
 ├── header              # "🍳 Recipe Manager" title
 ├── main
-│   ├── #theme-toggle  # Dark mode toggle button     # GitHub token input (hidden once configured)
+│   ├── #token-card    # GitHub token input (hidden once configured)
 │   ├── #form-card      # Add/edit recipe form
 │   ├── #sync-status    # Sync status text + "Sync Now" button
 │   ├── .card           # Recipe list section
@@ -66,7 +66,7 @@ All state is held in module-level variables in `js/app.js`:
 | `deferredPrompt`  | `Event?`  | PWA install prompt event.                    |
 
 Persistence layers:
-- **localStorage** — Stores recipes, token, theme, and `recipes_last_updated` timestamp.
+- **localStorage** — Stores recipes, token, and `recipes_last_updated` timestamp.
 - **GitHub Gist** — Remote source. Synced on app load, after every CRUD operation, and on demand.
 
 ## Data Flow
@@ -110,7 +110,7 @@ The single `js/app.js` was split into 7 files, keeping vanilla JS with global sc
 | `state.js`      | `GIST_CONFIG`, global state variables, DOM refs, token management, localStorage helpers |
 | `gist-api.js`   | `fetchGist()`, `updateGist()`                                   |
 | `sync.js`       | `syncWithGist()` (last-write-wins protocol)                     |
-| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal, theme |
+| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal |
 | `recipes.js`    | `addRecipe()`, `updateRecipe()`, `deleteRecipe()`, `getRecipeById()`, form handling |
 | `app.js`        | `initApp()`, event listeners, service worker registration, install prompt |
 
@@ -120,7 +120,7 @@ Each file grabs its own DOM refs. Functions reference each other via the global 
 
 ### `css/style.css`
 
-- CSS custom properties for theming (light/dark via `[data-theme="dark"]`)
+- CSS custom properties for theming (dark theme by default)
 - Card-based layout with gradient background
 - Responsive design (max-width: 800px container)
 - Modal overlay pattern, form styles, recipe cards
