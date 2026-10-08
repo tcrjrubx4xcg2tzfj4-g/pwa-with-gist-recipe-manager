@@ -14,6 +14,7 @@ A single-page PWA for managing recipes. Recipes live in a GitHub Gist (multi-dev
   name: string,          // Required. Recipe title.
   source: string|null,   // Optional. Source attribution, e.g. "Cookbook p. 42".
   calories: number|null, // Optional. Total calories for the recipe.
+  caloriesSource: "ai"|"manual"|null, // Origin of calories. null/absent = legacy (treated as manual when calories present).
   ingredients: string[], // Array of ingredient lines, e.g. ["2 cups flour", "3 eggs"].
   instructions: string[],// Array of instruction steps, one per line.
   notes: string[],       // Array of note lines. Optional.
@@ -41,7 +42,6 @@ Legacy format (flat array without wrapper object) is also handled on read.
 index.html
 ├── header              # "🍳 Recipe Manager" title
 ├── main
-│   ├── #token-card    # GitHub token input (hidden once configured)
 │   ├── #form-card      # Add/edit recipe form
 │   ├── #sync-status    # Sync status text + "Sync Now" button
 │   ├── .card           # Recipe list section
@@ -50,23 +50,26 @@ index.html
 │   │   └── #recipe-list
 │   └── #install-btn    # PWA install prompt button
 ├── footer
+├── #settings-overlay   # Settings modal (GitHub token + OpenRouter AI config)
 └── #modal-overlay      # Recipe detail modal (hidden by default)
 ```
 
 ## State Management
 
-All state is held in module-level variables in `js/app.js`:
+All state is held in module-level variables in `js/state.js`:
 
-| Variable          | Type      | Purpose                                      |
-|-------------------|-----------|----------------------------------------------|
-| `recipes`         | `Recipe[]`| Master recipe list. Source of truth for UI.  |
-| `githubToken`     | `string?` | GitHub PAT loaded from localStorage.         |
-| `editingId`       | `string?` | ID of recipe currently being edited in form. |
-| `syncInProgress`  | `boolean` | Lock to prevent concurrent sync calls.       |
-| `deferredPrompt`  | `Event?`  | PWA install prompt event.                    |
+| Variable             | Type        | Purpose                                          |
+|----------------------|-------------|--------------------------------------------------|
+| `recipes`            | `Recipe[]`  | Master recipe list. Source of truth for UI.      |
+| `settings`           | `Object`    | Persisted settings (GitHub token, AI provider/key/model). |
+| `githubToken`        | `string?`   | GitHub PAT loaded from `settings`.               |
+| `editingId`          | `string?`   | ID of recipe currently being edited in form.     |
+| `originalIngredients`| `string[]?` | Ingredient snapshot captured on edit; used to detect changes for AI re-estimation. |
+| `syncInProgress`     | `boolean`   | Lock to prevent concurrent sync calls.           |
+| `deferredPrompt`     | `Event?`    | PWA install prompt event.                        |
 
 Persistence layers:
-- **localStorage** — Stores recipes, token, and `recipes_last_updated` timestamp.
+- **localStorage** — Stores recipes, settings (GitHub token + OpenRouter API key/model), and `recipes_last_updated` timestamp.
 - **GitHub Gist** — Remote source. Synced on app load, after every CRUD operation, and on demand.
 
 ## Data Flow
@@ -75,6 +78,15 @@ Persistence layers:
 User Action → CRUD Functions → localStorage (immediate)
                               → syncWithGist() (async, background)
 ```
+
+### AI Calorie Estimation (background)
+
+On save, `handleFormSubmit()` decides whether calories are manual or AI-managed:
+
+- A number typed into the calories field → `caloriesSource: "manual"`, no AI call.
+- Editing a recipe with manual/legacy calories → calories preserved, no AI call.
+- New recipe, or edited AI recipe with changed ingredients → saved with `calories: null`, then `estimateCalories()` runs fire-and-forget; on success the recipe is updated with `caloriesSource: "ai"` and re-synced.
+- Offline / no API key / API failure → recipe stays saved with `calories: null`.
 
 ### Sync Protocol (Last-Write-Wins)
 
@@ -90,31 +102,33 @@ syncWithGist()
   │   ├─ remote > local → Remote wins: overwrite local
   │   └─ local > remote → Local wins: push to gist
   │
-  └─ On auth failure → show token card
+  └─ On auth failure → show sync error text (update token in Settings)
 ```
 
 Sync triggers:
 - App init (if token is saved)
 - After add/edit/delete recipe
+- After saving settings with a valid GitHub token
 - Manually via "Sync Now" button
 
 ## Module Responsibilities
 
-### `js/` (split across 7 files)
+### `js/` (split across 8 files)
 
-The single `js/app.js` was split into 7 files, keeping vanilla JS with global scope — no bundler needed. All files load before `DOMContentLoaded` fires, so mutual references across files are safe.
+The single `js/app.js` was split into 8 files, keeping vanilla JS with global scope — no bundler needed. All files load before `DOMContentLoaded` fires, so mutual references across files are safe.
 
 | File            | Key exports (globals)                                           |
 |-----------------|----------------------------------------------------------------|
 | `utils.js`      | `calculateServings()`, `generateId()`, `escapeHtml()`          |
-| `state.js`      | `GIST_CONFIG`, global state variables, DOM refs, token management, localStorage helpers |
-| `gist-api.js`   | `fetchGist()`, `updateGist()`                                   |
+| `state.js`      | `GIST_CONFIG`, `DEFAULT_SETTINGS`, global state variables, DOM refs, settings & localStorage helpers, `calorieSourceOf()` |
+| `gist-api.js`   | `fetchGist()`, `updateGist()`, `testGithubToken()`              |
 | `sync.js`       | `syncWithGist()` (last-write-wins protocol)                     |
-| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal |
-| `recipes.js`    | `addRecipe()`, `updateRecipe()`, `deleteRecipe()`, `getRecipeById()`, form handling |
-| `app.js`        | `initApp()`, event listeners, service worker registration, install prompt |
+| `ui.js`         | `toggleForm()`, `renderRecipes()`, `createRecipeCard()`, modal (incl. 🤖 AI indicator) |
+| `ai.js`         | `estimateCalories()`, `testOpenRouterConfig()` (OpenRouter API) |
+| `recipes.js`    | `addRecipe()`, `updateRecipe()`, `deleteRecipe()`, `getRecipeById()`, form handling & calorie strategy |
+| `app.js`        | `initApp()`, event listeners, settings validation, service worker registration, install prompt |
 
-**Load order (dependency order):** `utils.js` → `state.js` → `gist-api.js` → `sync.js` → `ui.js` → `recipes.js` → `app.js`
+**Load order (dependency order):** `utils.js` → `state.js` → `gist-api.js` → `sync.js` → `ui.js` → `ai.js` → `recipes.js` → `app.js`
 
 Each file grabs its own DOM refs. Functions reference each other via the global scope.
 
@@ -128,7 +142,7 @@ Each file grabs its own DOM refs. Functions reference each other via the global 
 ### `service-worker.js`
 
 - Cache strategy: Cache-first for app shell (HTML, CSS, JS, icons, manifest)
-- GitHub API requests (`api.github.com`) bypass cache (not intercepted)
+- GitHub API and OpenRouter API responses are not cached (cross-origin responses are only cached when `response.type === "basic"`)
 - Old caches cleaned on activate
 - `skipWaiting` triggered on install and via message from client
 
@@ -173,6 +187,8 @@ Notes for agents:
 - **GitHub Gist API** (`api.github.com`): Requires personal access token with `gist` scope.
   - `GET /gists/{id}` — fetch gist
   - `PATCH /gists/{id}` — update gist file content
+- **OpenRouter API** (`openrouter.ai/api/v1/chat/completions`): Requires an API key (stored in settings). Used for AI calorie estimation and settings validation.
+  - Default model: `~openai/gpt-mini-latest`
 - No NPM dependencies, no build step.
 
 ## Key Design Decisions
@@ -182,3 +198,4 @@ Notes for agents:
 3. **Token in localStorage.** Convenience over security. Token is scoped to gists only.
 4. **CRUD is async-safe.** localStorage writes are synchronous (safe); gist syncs are fire-and-forget with error logging.
 5. **Single source of truth.** Both localStorage and gist store the full recipe list, not diffs.
+6. **AI calories are additive and fire-and-forget.** Recipes save instantly; calorie estimation happens in the background and never blocks or loses data.

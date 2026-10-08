@@ -58,11 +58,22 @@ function createRecipeCard(recipe) {
   card.dataset.id = recipe.id;
 
   const portions = calculateServings(recipe.calories);
+  const aiBadge =
+    recipe.caloriesSource === "ai"
+      ? `<span class="recipe-card-ai" title="AI-estimated">🤖</span>`
+      : "";
+  const badges =
+    portions > 0 || aiBadge
+      ? `<div class="recipe-card-badges">
+            ${portions > 0 ? `<span class="recipe-card-portions">👥 ${portions} Portionen</span>` : ""}
+            ${aiBadge}
+        </div>`
+      : "";
 
   card.innerHTML = `
         <div class="recipe-card-header">
             <h3 class="recipe-card-title">${escapeHtml(recipe.name)}</h3>
-            ${portions > 0 ? `<span class="recipe-card-portions">👥 ${portions} Portionen</span>` : ""}
+            ${badges}
         </div>
     `;
 
@@ -107,6 +118,7 @@ function showRecipeModal(id) {
         </div>
         <div class="modal-meta">
             ${recipe.calories ? `<span>🔥 ${recipe.calories} calories</span> <span>👥 ${calculateServings(recipe.calories)} servings</span>` : ""}
+            ${recipe.caloriesSource === "ai" ? `<span title="AI-estimated">🤖 AI-estimated</span>` : ""}
             ${recipe.source ? `<span>📖 Source: ${isUrl(recipe.source) ? `<a href="${escapeHtml(recipe.source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(recipe.source)}</a>` : escapeHtml(recipe.source)}</span>` : ""}
         </div>
         ${

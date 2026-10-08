@@ -20,12 +20,13 @@
 
 // ==================== Settings Defaults ====================
 
+const DEFAULT_AI_MODEL = '~openai/gpt-mini-latest';
+
 const DEFAULT_SETTINGS = {
   github_token: '',
-  // Future settings go here, e.g.:
-  // ai_api_key: '',
-  // ai_model: '',
-  // theme: 'dark',
+  ai_provider: 'openrouter',
+  ai_api_key: '',
+  ai_model: DEFAULT_AI_MODEL,
 };
 
 let settings = {};
@@ -76,6 +77,16 @@ function setSetting(key, value) {
   settings[key] = value;
 }
 
+/**
+ * Resolve the effective calorie source with backward compatibility.
+ * Recipes created before `caloriesSource` existed are treated as manual
+ * when they already have a calorie value.
+ */
+function calorieSourceOf(recipe) {
+  if (recipe.caloriesSource) return recipe.caloriesSource;
+  return recipe.calories != null ? 'manual' : null;
+}
+
 // ==================== App Configuration ====================
 
 const GIST_CONFIG = {
@@ -91,6 +102,7 @@ let syncInProgress = false;
 let githubToken = null;
 let wakeLock = null;
 let shuffleActive = false;
+let originalIngredients = null;
 
 // DOM Elements
 const installBtn = document.getElementById("install-btn");
@@ -99,6 +111,12 @@ const settingsOverlay = document.getElementById("settings-overlay");
 const settingsClose = document.getElementById("settings-close");
 const settingsContent = document.getElementById("settings-content");
 const settingsTokenInput = document.getElementById("settings-github-token");
+const settingsAiProviderInput = document.getElementById("settings-ai-provider");
+const settingsAiApiKeyInput = document.getElementById("settings-ai-api-key");
+const settingsAiModelInput = document.getElementById("settings-ai-model");
+const settingsGithubStatus = document.getElementById("settings-github-status");
+const settingsAiKeyStatus = document.getElementById("settings-ai-key-status");
+const settingsAiModelStatus = document.getElementById("settings-ai-model-status");
 const settingsSaveBtn = document.getElementById("settings-save-btn");
 const settingsCancelBtn = document.getElementById("settings-cancel-btn");
 const settingsError = document.getElementById("settings-error");
@@ -139,12 +157,37 @@ function hideSettingsError() {
 
 function populateSettingsForm() {
   settingsTokenInput.value = settings.github_token || '';
+  settingsAiProviderInput.value = settings.ai_provider || 'openrouter';
+  settingsAiApiKeyInput.value = settings.ai_api_key || '';
+  settingsAiModelInput.value = settings.ai_model || DEFAULT_AI_MODEL;
+  clearSettingsStatus();
 }
 
 function readSettingsForm() {
   return {
     github_token: settingsTokenInput.value.trim(),
+    ai_provider: settingsAiProviderInput.value.trim() || 'openrouter',
+    ai_api_key: settingsAiApiKeyInput.value.trim(),
+    ai_model: settingsAiModelInput.value.trim() || DEFAULT_AI_MODEL,
   };
+}
+
+function clearSettingsStatus() {
+  [
+    settingsGithubStatus,
+    settingsAiKeyStatus,
+    settingsAiModelStatus,
+  ].forEach((el) => {
+    if (!el) return;
+    el.textContent = '';
+    el.className = 'validation-status';
+  });
+}
+
+function setSettingsStatus(el, state, text) {
+  if (!el) return;
+  el.textContent = text;
+  el.className = `validation-status ${state}`;
 }
 
 // ==================== Local Storage Helpers ====================

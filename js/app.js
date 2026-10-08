@@ -11,26 +11,34 @@ function setupEventListeners() {
   });
 
   // Settings save button
-  settingsSaveBtn.addEventListener("click", () => {
+  settingsSaveBtn.addEventListener("click", async () => {
     const formData = readSettingsForm();
 
     hideSettingsError();
 
-    // Save all settings
+    // Save all settings immediately so user input is never lost.
     Object.keys(formData).forEach((key) => {
       settings[key] = formData[key];
     });
 
-    if (saveSettings()) {
-      hideSettings();
-      // If token is now set, trigger a sync
-      if (githubToken) {
-        syncWithGist();
-      }
-      renderRecipes();
-    } else {
+    if (!saveSettings()) {
       showSettingsError("Failed to save settings");
+      return;
     }
+
+    // Test configuration and show per-field feedback.
+    settingsSaveBtn.disabled = true;
+    const originalText = settingsSaveBtn.textContent;
+    settingsSaveBtn.textContent = "⏳ Testing...";
+
+    try {
+      await validateAndReportSettings(formData);
+    } finally {
+      settingsSaveBtn.disabled = false;
+      settingsSaveBtn.textContent = originalText;
+    }
+
+    renderRecipes();
   });
 
   // Settings cancel button
@@ -88,6 +96,66 @@ function setupEventListeners() {
       requestWakeLock();
     }
   });
+}
+
+async function validateAndReportSettings(formData) {
+  setSettingsStatus(settingsGithubStatus, "pending", "⏳ Testing...");
+  setSettingsStatus(settingsAiKeyStatus, "pending", "⏳ Testing...");
+  setSettingsStatus(settingsAiModelStatus, "pending", "⏳ Testing...");
+
+  let githubResult = null;
+  if (formData.github_token) {
+    githubResult = await testGithubToken(formData.github_token);
+  }
+
+  if (githubResult === null) {
+    setSettingsStatus(settingsGithubStatus, "skipped", "— not set");
+  } else if (githubResult.ok) {
+    setSettingsStatus(settingsGithubStatus, "ok", "✅ Valid");
+  } else {
+    setSettingsStatus(settingsGithubStatus, "error", `❌ ${githubResult.message}`);
+  }
+
+  let aiResult = null;
+  if (formData.ai_api_key) {
+    aiResult = await testOpenRouterConfig(
+      formData.ai_api_key,
+      formData.ai_model || DEFAULT_AI_MODEL,
+    );
+  }
+
+  if (aiResult === null) {
+    setSettingsStatus(settingsAiKeyStatus, "skipped", "— not set");
+    setSettingsStatus(settingsAiModelStatus, "skipped", "— not set");
+  } else if (aiResult.ok) {
+    setSettingsStatus(settingsAiKeyStatus, "ok", "✅ Valid");
+    setSettingsStatus(settingsAiModelStatus, "ok", "✅ Valid");
+  } else if (aiResult.field === "model") {
+    setSettingsStatus(settingsAiKeyStatus, "ok", "✅ Key accepted");
+    setSettingsStatus(settingsAiModelStatus, "error", `❌ ${aiResult.message}`);
+  } else {
+    setSettingsStatus(settingsAiKeyStatus, "error", `❌ ${aiResult.message}`);
+    setSettingsStatus(settingsAiModelStatus, "skipped", "— not tested");
+  }
+
+  const hasErrors =
+    (githubResult !== null && !githubResult.ok) ||
+    (aiResult !== null && !aiResult.ok);
+
+  if (hasErrors) {
+    showSettingsError(
+      "Some settings failed validation. Fix the marked fields, then save again.",
+    );
+    return;
+  }
+
+  hideSettingsError();
+  hideSettings();
+
+  // Trigger an initial sync if a valid GitHub token was configured.
+  if (githubResult !== null && githubResult.ok && githubToken) {
+    syncWithGist();
+  }
 }
 
 function setupServiceWorker() {

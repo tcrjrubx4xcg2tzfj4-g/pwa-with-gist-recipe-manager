@@ -25,6 +25,44 @@ async function fetchGist() {
   return await response.json();
 }
 
+/**
+ * Validate a GitHub token by attempting to read the configured gist.
+ * Returns { ok: true } on success, or { ok: false, message } on failure.
+ */
+async function testGithubToken(token) {
+  if (!token) {
+    return { ok: false, message: "No token provided" };
+  }
+
+  const url = `https://api.github.com/gists/${GIST_CONFIG.id}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `token ${token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+
+    if (response.ok) {
+      return { ok: true };
+    }
+
+    if (response.status === 401 || response.status === 403) {
+      return { ok: false, message: "Unauthorized - check the token and 'gist' scope" };
+    }
+
+    if (response.status === 404) {
+      return { ok: false, message: "Gist not found - check the gist id" };
+    }
+
+    return { ok: false, message: `GitHub error ${response.status}` };
+  } catch (e) {
+    return { ok: false, message: `Network error: ${e.message}` };
+  }
+}
+
 async function updateGist(content) {
   if (!githubToken) {
     throw new Error("No GitHub token configured");

@@ -1,4 +1,4 @@
-const CACHE_NAME = "recipe-manager-v13";
+const CACHE_NAME = "recipe-manager-v14";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
   "/js/gist-api.js",
   "/js/sync.js",
   "/js/ui.js",
+  "/js/ai.js",
   "/js/recipes.js",
   "/js/app.js",
   "/manifest.json",
@@ -56,8 +57,10 @@ self.addEventListener("activate", (event) => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener("fetch", (event) => {
-  // Don't cache Bitbucket API calls - they need fresh data and have auth headers
-  if (event.request.url.includes("api.bitbucket.org")) {
+  // Don't intercept GitHub / OpenRouter API calls - they need fresh data
+  // and have auth headers that must not be cached.
+  const requestUrl = event.request.url;
+  if (requestUrl.includes("api.github.com") || requestUrl.includes("openrouter.ai")) {
     return;
   }
 
