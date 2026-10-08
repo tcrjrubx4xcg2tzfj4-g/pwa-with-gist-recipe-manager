@@ -1,4 +1,4 @@
-const CACHE_NAME = "recipe-manager-v11";
+const CACHE_NAME = "recipe-manager-v12";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
