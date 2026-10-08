@@ -136,28 +136,31 @@ async function handleFormSubmit(e) {
 
   // Decide calorie strategy:
   // 1. A value typed into the field is always a manual override.
-  // 2. Manual calories (including legacy recipes) are preserved untouched.
-  // 3. Everything else is AI territory: keep unchanged calories when the
-  //    ingredients did not change, otherwise clear and re-estimate in the
-  //    background.
+  // 2. Field is empty: manual recipes (pre-filled in form) → user cleared it
+  //    deliberately → remove calories & let AI re-estimate if available.
+  // 3. Field is empty, AI recipe, ingredients unchanged → preserve AI calories.
+  // 4. Field is empty, AI recipe, ingredients changed → clear & re-estimate.
   const userEnteredCalories = caloriesInput.value.trim() !== "";
   const existing = editingId ? getRecipeById(editingId) : null;
 
   if (userEnteredCalories) {
     recipeData.calories = parseInt(caloriesInput.value, 10);
     recipeData.caloriesSource = "manual";
-  } else if (existing && calorieSourceOf(existing) === "manual") {
-    recipeData.calories = existing.calories;
-    recipeData.caloriesSource = "manual";
   } else {
+    // Field is empty — either user cleared it (manual recipe starts pre-filled)
+    // or it's an AI recipe (field pre-cleared by populateForm).
+    // Manual: user deliberately removed calories → clear them.
+    // AI: preserve if ingredients unchanged, otherwise re-estimate.
     const ingredientsChanged =
       originalIngredients !== null &&
       JSON.stringify(originalIngredients) !== JSON.stringify(recipeData.ingredients);
 
-    if (existing && !ingredientsChanged) {
+    if (existing && !ingredientsChanged && calorieSourceOf(existing) !== "manual") {
+      // AI / legacy recipe with unchanged ingredients → preserve existing calories
       recipeData.calories = existing.calories;
       recipeData.caloriesSource = existing.caloriesSource || null;
     } else {
+      // Manual where user cleared calories, or ingredients changed → clear & re-estimate
       recipeData.calories = null;
       recipeData.caloriesSource = undefined;
     }
