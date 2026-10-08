@@ -1,6 +1,8 @@
 # PWA-with-gist — Agent Quick Reference
 
-Read `ARCHITECTURE.md` for the full design overview, data model, sync protocol, and module responsibilities. This file covers only conventions an agent must follow when modifying code.
+**Before making any change, you must read the full `ARCHITECTURE.md` file first.** It contains the data model, sync protocol, deployment workflow (including the required `CACHE_NAME` bump), and module responsibilities that this quick reference does not repeat.
+
+This file covers only conventions an agent must follow when modifying code.
 
 ## CRUD Convention (always do in this order)
 
@@ -33,3 +35,7 @@ You need to touch **5 places**:
 ## DOM Ref Pattern
 
 All `document.getElementById()` calls are done once at module level in `state.js`. Never re-query the DOM for elements already referenced there.
+
+## Before Every Commit
+
+If you changed any CSS, JS, HTML, icon, or manifest file, you **must** bump the `CACHE_NAME` constant in `service-worker.js` (e.g. `v11` → `v12`). Without this, installed PWA users keep seeing the old cached version.
