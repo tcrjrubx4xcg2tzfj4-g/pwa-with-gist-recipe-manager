@@ -64,7 +64,11 @@ async function estimateCalories(name, ingredients) {
 
   try {
     const ingredientCount = (ingredients || []).length;
-    const dynamicTokens = Math.max(100, ingredientCount * 25 + 50);
+    // Generous budget: each ingredient takes ~15-25 tokens in JSON response;
+    // the formula below leaves ample margin for verbose models, longer names,
+    // and model-specific tokenization. Truncation would produce partial JSON,
+    // making the regex fallback return incomplete results and wrong totals.
+    const dynamicTokens = Math.max(250, ingredientCount * 50 + 120);
     const response = await openRouterRequest(
       apiKey,
       model,
@@ -128,14 +132,17 @@ function extractMessageContent(data) {
 
 /**
  * Parse the AI response into an array of {name, kcal_per_100g, grams} objects.
+ *
+ * Expects clean valid JSON. If the response can't be parsed (truncated, malformed,
+ * extra text), returns null rather than attempting regex salvage — partial data
+ * would silently produce wrong calorie totals and hide model quality issues.
  */
 function parseIngredientEstimates(content) {
   if (!content) return null;
 
-  // Strip markdown code fences
+  // Strip markdown code fences (some models wrap in ```json despite instructions)
   const cleaned = content.replace(/```(?:json)?/gi, "").replace(/`/g, "").trim();
 
-  // Try JSON.parse first
   try {
     const parsed = JSON.parse(cleaned);
     if (parsed.ingredients && Array.isArray(parsed.ingredients)) {
@@ -144,18 +151,10 @@ function parseIngredientEstimates(content) {
         .map(i => ({ name: i.name, kcal_per_100g: i.kcal_per_100g, grams: i.grams }));
     }
   } catch (e) {
-    // Fall through to regex
+    console.warn("[AI] Failed to parse estimation JSON — model may be too weak or response was truncated");
   }
 
-  // Regex fallback: extract ingredient objects with name, kcal_per_100g, grams
-  const results = [];
-  const pattern = /"name"\s*:\s*"([^"]+)"[\s\S]*?"kcal_per_100g"\s*:\s*([\d.]+)[\s\S]*?"grams"\s*:\s*([\d.]+)/gi;
-  let match;
-  while ((match = pattern.exec(cleaned)) !== null) {
-    results.push({ name: match[1], kcal_per_100g: parseFloat(match[2]), grams: parseFloat(match[3]) });
-  }
-
-  return results.length > 0 ? results : null;
+  return null;
 }
 
 /**
