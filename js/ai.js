@@ -42,19 +42,29 @@ async function estimateCalories(name, ingredients) {
   if (!apiKey) return null;
 
   const systemPrompt = [
-    "You are a nutritionist. Estimate the total calorie count for a recipe.",
-    'Given the recipe name and ingredient lines, return a JSON object with exactly one key: {"total_calories": number}.',
-    "Use reasonable real-world estimates. If details are ambiguous, make your best guess based on typical quantities.",
-    "Return only the JSON. No markdown, no code fences, no explanation.",
+    "You are a nutritionist. Estimate calories per ingredient in a recipe.",
+    "Ingredient names may be in German or English.",
+    "For every ingredient line, output:",
+    "- kcal_per_100g: nutritional density per 100g",
+    "- grams: estimated quantity in grams as used in the recipe",
+    "Rules:",
+    "- Understand common German units (EL, TL, Tasse, Prise, Bund, g, ml) and English/imperial units (tbsp, tsp, cup, oz, lb).",
+    "- If no quantity is listed, estimate a plausible home-cooking amount.",
+    "- Set kcal_per_100g to 0 for negligible ingredients (Wasser, Salz, Gew\u00fcrze in kleinen Mengen).",
+    "- Do NOT skip ingredients. Every input line must have an entry.",
+    'Return ONLY valid JSON. No markdown, no code fences, no explanation.',
+    'Format: {"ingredients":[{"name":"...","kcal_per_100g":number,"grams":number},...]}',
   ].join("\n");
 
   const ingredientLines = (ingredients || [])
     .map((ing, i) => `${i + 1}. ${ing}`)
     .join("\n");
 
-  const userPrompt = `Recipe name: ${name || "Untitled"}\nIngredients:\n${ingredientLines}`;
+  const userPrompt = `Recipe: ${name || "Untitled"}\nIngredients:\n${ingredientLines}\n\nFor each ingredient, provide kcal_per_100g and estimated grams used.`;
 
   try {
+    const ingredientCount = (ingredients || []).length;
+    const dynamicTokens = Math.max(100, ingredientCount * 25 + 50);
     const response = await openRouterRequest(
       apiKey,
       model,
@@ -62,7 +72,7 @@ async function estimateCalories(name, ingredients) {
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
       ],
-      { maxTokens: 30, temperature: 0 },
+      { maxTokens: dynamicTokens, temperature: 0 },
     );
 
     if (!response.ok) {
@@ -72,13 +82,22 @@ async function estimateCalories(name, ingredients) {
 
     const data = await response.json();
     const content = extractMessageContent(data);
-    const totalCalories = parseCalories(content);
+    if (!content) return null;
 
-    if (totalCalories === null || totalCalories < 0 || isNaN(totalCalories)) {
-      return null;
+    const ingredientData = parseIngredientEstimates(content);
+    if (!ingredientData || ingredientData.length === 0) return null;
+
+    // Calculate total: sum of (kcal_per_100g / 100) * grams per ingredient
+    let total = 0;
+    for (const item of ingredientData) {
+      if (item.kcal_per_100g > 0 && item.grams > 0) {
+        total += (item.kcal_per_100g / 100) * item.grams;
+      }
     }
 
-    return Math.round(totalCalories);
+    if (total <= 0 || isNaN(total)) return null;
+
+    return Math.round(total);
   } catch (e) {
     console.error("[AI] Estimation error:", e);
     return null;
@@ -107,49 +126,36 @@ function extractMessageContent(data) {
   return null;
 }
 
-function parseCalories(content) {
+/**
+ * Parse the AI response into an array of {name, kcal_per_100g, grams} objects.
+ */
+function parseIngredientEstimates(content) {
   if (!content) return null;
 
-  // Try parsing the whole content as JSON first.
+  // Strip markdown code fences
+  const cleaned = content.replace(/```(?:json)?/gi, "").replace(/`/g, "").trim();
+
+  // Try JSON.parse first
   try {
-    const parsed = JSON.parse(content.trim());
-    const value = extractCaloriesValue(parsed);
-    if (value !== null) return value;
-  } catch (e) {
-    // Fall through to regex-based extraction.
-  }
-
-  // Strip markdown code fences and backticks if present.
-  const cleaned = content
-    .replace(/```(?:json)?/gi, "")
-    .replace(/`/g, "")
-    .trim();
-
-  // Look for "total_calories": <number> (with or without quotes around value).
-  const keyMatch = cleaned.match(/"total_calories"\s*:\s*(-?\d+(?:\.\d+)?)/);
-  if (keyMatch) return parseFloat(keyMatch[1]);
-
-  // Last resort: first standalone number.
-  const numberMatch = cleaned.match(/(-?\d+(?:\.\d+)?)/);
-  return numberMatch ? parseFloat(numberMatch[1]) : null;
-}
-
-function extractCaloriesValue(obj) {
-  if (obj == null) return null;
-  if (typeof obj === "number") return obj;
-
-  if (typeof obj === "object") {
-    const keys = ["total_calories", "totalCalories", "calories"];
-    for (const key of keys) {
-      if (typeof obj[key] === "number") return obj[key];
-      if (typeof obj[key] === "string" && obj[key].trim() !== "") {
-        const n = parseFloat(obj[key]);
-        if (!isNaN(n)) return n;
-      }
+    const parsed = JSON.parse(cleaned);
+    if (parsed.ingredients && Array.isArray(parsed.ingredients)) {
+      return parsed.ingredients
+        .filter(i => i.name && typeof i.kcal_per_100g === "number" && typeof i.grams === "number")
+        .map(i => ({ name: i.name, kcal_per_100g: i.kcal_per_100g, grams: i.grams }));
     }
+  } catch (e) {
+    // Fall through to regex
   }
 
-  return null;
+  // Regex fallback: extract ingredient objects with name, kcal_per_100g, grams
+  const results = [];
+  const pattern = /"name"\s*:\s*"([^"]+)"[\s\S]*?"kcal_per_100g"\s*:\s*([\d.]+)[\s\S]*?"grams"\s*:\s*([\d.]+)/gi;
+  let match;
+  while ((match = pattern.exec(cleaned)) !== null) {
+    results.push({ name: match[1], kcal_per_100g: parseFloat(match[2]), grams: parseFloat(match[3]) });
+  }
+
+  return results.length > 0 ? results : null;
 }
 
 /**
